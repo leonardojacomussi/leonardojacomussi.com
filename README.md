@@ -41,6 +41,8 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/reactjs.png" />
           </td>
           <td>React JS</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/nextjsLight.svg" />
           </td>
@@ -51,6 +53,8 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/typescript.svg" />
           </td>
           <td>Typescript</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/nodejs.png" />
           </td>
@@ -61,6 +65,8 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/emotion.png" />
           </td>
           <td>Emotion</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/mui.png" />
           </td>
@@ -71,6 +77,8 @@ This project was developed with the following technologies:
             <img width="30px" src="https://sendgrid.com/favicon.ico" />
           </td>
           <td>SendGrid API</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="https://img.icons8.com/color/256/google-maps.png" />
           </td>
@@ -81,6 +89,8 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/githubDark.svg" />
           </td>
           <td>Git and Github</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/figma.png" />
           </td>
