@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "description": "Hi, welcome to my personal page! My name is Leonardo Jacomussi and I am an Acoustical Engineer, IoT and Web Developer Fullstack."
+  },
+  "backToTop": "Back to the top",
+  "header": {
+    "services": "Services",
+    "aboutMe": "About me",
+    "qualifications": "Qualifications",
+    "portfolio": "Portfolio",
+    "contact": "Contact Me",
+    "changeTheme": "Change theme",
+    "language": "Language",
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
+  "footer": {
+    "copy": "© 2023- Leonardo Jacomussi",
+    "coffee": "Buy me a ☕!"
+  },
+  "home": {
+    "main": {
+      "hello": "Hey, I'm Leonardo",
+      "subtitle1": "Acoustical Engineer",
+      "subtitle2": "and",
+      "subtitle3": "Software Developer",
+      "description": "I love learning new things and am passionate about technology and creative solutions to solve real world problems.",
+      "btnAboutMe": "About Me",
+      "btnPortifolio": "Portfolio",
+      "iLiveIn": "I live in",
+      "saoPaulo": "São Paulo",
+      "experience": "Experience",
+      "3years": "3 years",
+      "age": "Age",
+      "myAge": "26 years old"
+    },
+    "services": {
+      "title": "SERVICES",
+      "subtitle": "Services I offer",
+      "frontEnd": "Front-End",
+      "frontEndDescription": "Building responsive, cross-platform screens with SEO best practices, accessibility, and fluidity for the best user experience from a pre-provided design.",
+      "backEnd": "Back-End",
+      "backEndDescription": "Building RESTful API in TypeScript with Serverless Back-End and NoSQL database from AWS or GCP.",
+      "UIDesign": "UI Design",
+      "UIDesignDescription": "Building wire frames, design systems, user journeys and digital prototypes with focus on user, design and navigability.",
+      "IoTSolutions": "IoT Solutions",
+      "IoTSolutionsDescription": "Consulting on cloud architecture for IoT systems: security and sensor authentication, two-way communication via MQTT protocol, BaaS (Back-end as a Service) realtime database and interactive dashboards for data monitoring.\nSoftware development for embedded Linux and realtime data processing in Python 3.",
+      "acousticalEng": "Acoustical Engineering",
+      "acousticalEngDescription": "Script development, task automation and/or complete solutions for acoustic measurements, digital signal processing and DataViz (data visualization) according to national and international standards.",
+      "others": "Others",
+      "othersDescription": "Let me know more about your problem, I am open to new approaches to develop new solutions."
+    },
+    "about": {
+      "title": "I AM AN ACOUSTICAL ENGR. AND SOFTWARE DEVELOPER",
+      "subtitle": "About Me",
+      "technology": "Technologies",
+      "description1": "I'm an Acoustical Engineer with strong knowledge in digital signal processing and data analysis.",
+      "description2": "I work as a Fullstack Web Software Developer and Python for Linux Embedded in IoT systems at the largest acoustics and environmental comfort consulting company in Brazil, Harmonia.",
+      "description3": "I love learning new things and am passionate about technology and creative solutions to solve real world problems.",
+      "github": "Github",
+      "linkedin": "LinkedIn",
+      "researchgate": "Research Gate",
+      "nextjs": "Next JS",
+      "reactjs": "React JS",
+      "javascript": "Javascript",
+      "typescript": "Typescript",
+      "html": "HTML",
+      "css": "CSS",
+      "emotion": "Emotion",
+      "figma": "Figma",
+      "prismic": "Prismic",
+      "mui": "MUI Material",
+      "nodejs": "Node JS",
+      "python": "Python"
+    },
+    "qualifications": {
+      "title": "QUALIFICATIONS",
+      "subtitle": "Experience",
+      "work": {
+        "harmonia": {
+          "title": "Harmonia",
+          "timeTotal": "3 years and 2 months",
+          "local": "São Paulo, São Paulo, Brazil",
+          "assignments": {
+            "eng": {
+              "title": "Acoustical Engineer | Fullstack Developer",
+              "period": "Full-time",
+              "team": "Innovation Team",
+              "time": "Jan 2021 - present | 2 years and 2 months"
+            },
+            "intern": {
+              "title": "Intern",
+              "period": "Full-time",
+              "team": "Innovation Team | Acoustics Laboratory",
+              "time": "Jan 2020 - Dec 2020 | 1 year"
+            }
+          }
+        }
+      },
+      "education": {
+        "title": "Education",
+        "rocketseat": {
+          "title": "Rocketseat",
+          "type": "Open courses",
+          "course": "Explorer",
+          "time": "feb 2023 - present"
+        },
+        "udemy": {
+          "title": "Udemy",
+          "type": "Open courses",
+          "courses": {
+            "firebase": {
+              "title": "Firebase in practice",
+              "duration": "12 hours",
+              "time": "mar 2021"
+            },
+            "modernWeb": {
+              "title": "Modern web",
+              "duration": "89.5 hours",
+              "time": "mar 2021"
+            }
+          }
+        },
+        "ufsm": {
+          "title": "Federal University of Santa Maria",
+          "time": "2014 - 2020",
+          "local": "Santa Maria, Rio Grande do Sul, Brazil",
+          "course": "B.Sc in Acoustical Engineering",
+          "period": "Full-time"
+        }
+      }
+    },
+    "portfolio": {
+      "title": "PORTIFOLIO",
+      "subtitle": "Projects",
+      "otoh": {
+        "title": "OTOH",
+        "description1": "OTOH is an IoT intelligent sound monitoring service offered by Harmonia. In this project I am responsible for fullstack web development and programming the sensors on an embedded Linux system.",
+        "description2": "As part of the Innovation Team, I was able to contribute not only in technical development, but in all stages of service conception, from market benchmarking, service/product design, to the conception of physical and digital prototypes.",
+        "award": {
+          "title": "Awarded Project",
+          "award1": "Winner of the 8th edition of the Connected Smart Cities Award in the Pre-Operational Business category.",
+          "award2": "Elected the 2nd best startup in the 24th CBIC Awards for Innovation and Sustainability."
+        },
+        "learnMore": "Learn about the project"
+      }
+    },
+    "contact": {
+      "title": "CONTACT",
+      "subtitle": "Let's create something together",
+      "form": {
+        "name": "Your Full Name",
+        "email": "E-mail address",
+        "message": "Your Message",
+        "bntSubmit": "Send Message"
+      }
+    }
+  },
+  "emails": {
+    "contact": {
+      "subject": "Message received",
+      "hello": "Hello",
+      "intro": "I received your message through my site, and will contact you by e-mail shortly.",
+      "messageReceived": "Message received",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "sentIn": "Sent in",
+      "dontReply": "Don't reply to this email",
+      "bestRegards": "Best regards",
+      "feedback": {
+        "success": "Message sent successfully!",
+        "unexpectedError": "Unexpected error, please try again later.",
+        "codeError": "Error: code - (unknown error).",
+        "validName": "Please fill in a valid name.",
+        "validEmail": "Please fill in a valid email address.",
+        "validMessage": "Please fill in a valid message.",
+        "checkInfos": "Please check the information provided."
+      }
+    }
+  }
+}
