@@ -34,7 +34,7 @@ This project was developed with the following technologies:
 
 <p align="center">
     <table>
-    <br><table style="width: 100%;">
+    <br><table>
     <tbody>
         <tr>
           <td align="center">
@@ -45,6 +45,8 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/nextjsLight.svg" />
           </td>
           <td>Next JS</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/typescript.svg" />
           </td>
@@ -53,16 +55,18 @@ This project was developed with the following technologies:
             <img width="30px" src="./public/assets/icons/nodejs.png" />
           </td>
           <td>Node JS</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/emotion.png" />
           </td>
           <td>Emotion</td>
-        </tr>
-        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/mui.png" />
           </td>
           <td>Mui Material</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="https://sendgrid.com/favicon.ico" />
           </td>
@@ -71,6 +75,8 @@ This project was developed with the following technologies:
             <img width="30px" src="https://img.icons8.com/color/256/google-maps.png" />
           </td>
           <td>Google Maps Api</td>
+        </tr>
+        <tr>
           <td align="center">
             <img width="30px" src="./public/assets/icons/githubDark.svg" />
           </td>
