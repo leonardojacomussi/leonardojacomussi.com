@@ -10,7 +10,7 @@ import {
   EducationTitle, Experience, HarmoniaLogo, HarmoniaTitle,
   CurrentAssignment, Intern, Education, Rocketseat, RocketseatContent,
   RocketseatLogo, UFSM, UFSMLogo, UFSMContent, Udemy, UdemyLogo,
-  UdemyTitle, Firebase, ModernWeb, DownloadCV, DownloadCV2
+  UdemyTitle, Firebase, ModernWeb, DownloadCV
 
 } from "./styles";
 /**Files */
@@ -84,16 +84,8 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
             <p className="overline">{t("home.qualifications.work.harmonia.assignments.intern.team")}</p>
             <p className="overline">{t("home.qualifications.work.harmonia.assignments.intern.time")}</p>
           </Intern>
-
-          <DownloadCV2 id="download-cv">
-            <div>
-              <Button onClick={downloadCV}>
-                Download CV
-              </Button>
-            </div>
-          </DownloadCV2>
         </Experience>
-        <DownloadCV>
+        <DownloadCV className="hiddenX">
           <Button onClick={downloadCV}>
             Download CV
           </Button>

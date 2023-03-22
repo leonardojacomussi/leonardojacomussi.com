@@ -26,11 +26,12 @@ export const QualificationsContainer = styled.div<HTMLAttributes<HTMLDivElement>
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 1.5rem));
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
   grid-template-areas:
     "title-area ."
     "subtitle-area education-title-area"
-    "experience-area education-content-area";
+    "experience-area education-content-area"
+    "downloadcv-area .";
   
   @media(max-width: 900px) {
     grid-template-columns: 100%;
@@ -77,13 +78,12 @@ export const Experience = styled.div<HTMLAttributes<HTMLDivElement>>`
   height: fit-content;
   display: grid;
   grid-template-columns: 8.6rem calc(100% - 8.6rem);
-  grid-template-rows: repeat(4, auto) calc(100% - 8rem);
+  grid-template-rows: repeat(4, auto);
   grid-template-areas:
     "logo-harmonia-area title-harmonia-area"
     "top-dot-area current-assignment-area"
     "vertical-line-area ."
-    "bottom-dot-area intern-area"
-    "downloadcv-area downloadcv-area";
+    "bottom-dot-area intern-area";
   justify-items: center;
 
   .top-dot {
@@ -127,11 +127,6 @@ export const Experience = styled.div<HTMLAttributes<HTMLDivElement>>`
     background-color: ${({ theme }) => theme.colors.yellow};
   };
 
-  #download-cv {
-    display: flex;
-    min-height: 28rem;
-  };
-
   @media(max-width: 900px) {
     grid-template-rows: repeat(4, auto);
     grid-template-areas:
@@ -139,13 +134,7 @@ export const Experience = styled.div<HTMLAttributes<HTMLDivElement>>`
       "top-dot-area current-assignment-area"
       "vertical-line-area ."
       "bottom-dot-area intern-area";
-
-    #download-cv {
-      display: none;
-    };
   };
-
-
 `;
 
 export const HarmoniaLogo = styled.div<HTMLAttributes<HTMLDivElement>>`
@@ -214,10 +203,11 @@ export const Intern = styled.div<HTMLAttributes<HTMLDivElement>>`
 export const DownloadCV = styled.div<HTMLAttributes<HTMLDivElement>>`
   grid-area: downloadcv-area;
   height: 100%;
-  display: none;
+  display: flex;
   width: auto;
   align-items: flex-end;
   justify-self: start;
+  margin-top: -6rem;
   
   button {
     position: relative;
@@ -229,11 +219,9 @@ export const DownloadCV = styled.div<HTMLAttributes<HTMLDivElement>>`
   };
 
   @media(max-width: 900px) {
-    display: block;
+    margin-top: 0rem;
   };
 `;
-
-export const DownloadCV2 = DownloadCV;
 
 export const EducationTitle = styled.h4<HTMLAttributes<HTMLHeadingElement>>`
   grid-area: education-title-area;
