@@ -14,7 +14,6 @@ const SwitchTheme: FC<SwitchThemeProps> = ({ t, ...props }) => {
       {currentTheme && <Switch
         sx={{ m: 1 }}
         value={currentTheme}
-        aria-label={t("header.changeTheme")}
         title={t("header.changeTheme")}
         onClick={(e) => {
           if (e) e.preventDefault();

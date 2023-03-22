@@ -75,9 +75,9 @@ export const OtohMockup = styled.div<HTMLAttributes<HTMLDivElement>>`
   align-items: center;
   border-radius: ${({ theme }) => theme.borders.borderRadius};
 
-  > div {
+  /* > div {
     position: unset !important;
-  };
+  }; */
 
   img {
     object-fit: contain;

@@ -59,6 +59,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
             <Image
               width={32}
               height={32}
+              quality={100}
               alt={t("home.qualifications.work.harmonia.title")}
               title={t("home.qualifications.work.harmonia.title")}
               src={harmoniaImg.src}
@@ -104,6 +105,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               <Image
                 width={32}
                 height={32}
+                quality={100}
                 alt={t("home.qualifications.education.rocketseat.title")}
                 title={t("home.qualifications.education.rocketseat.title")}
                 src={rocketseatImg.src}
@@ -127,6 +129,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               <Image
                 width={32}
                 height={32}
+                quality={100}
                 alt={t("home.qualifications.education.udemy.title")}
                 title={t("home.qualifications.education.udemy.title")}
                 src={udemyImg.src}
@@ -155,6 +158,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               <Image
                 width={32}
                 height={32}
+                quality={100}
                 alt={t("home.qualifications.education.ufsm.title")}
                 title={t("home.qualifications.education.ufsm.title")}
                 src={ufsmImg.src}

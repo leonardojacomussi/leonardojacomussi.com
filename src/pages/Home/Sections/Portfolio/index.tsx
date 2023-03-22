@@ -33,7 +33,7 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
           </p>
           <OtohMockup2 className="hiddenX delay100" id="otoh-mockup">
             <Image
-              layout="fill"
+              quality={50} width={50} height={50} sizes="100%"
               alt={t("home.portfolio.otoh.title")}
               title={t("home.portfolio.otoh.title")}
               src={otohMockup.src} />
@@ -61,7 +61,7 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
         </DescriptionContainer>
         <OtohMockup className="hiddenX delay100">
           <Image
-            layout="fill"
+            quality={50} width={50} height={50} sizes="100%"
             alt={t("home.portfolio.otoh.title")}
             title={t("home.portfolio.otoh.title")}
             src={otohMockup.src} />
