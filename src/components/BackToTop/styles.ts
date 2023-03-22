@@ -7,8 +7,8 @@ export const Container = styled.div<ContainerProps>`
   height: 4rem;
   border-radius: ${({ theme }) => theme.borders.borderRadius};
   position: fixed;
-  bottom: 5rem;
-  right: 7%;
+  bottom: 3rem;
+  right: 3rem;
   background-color: ${({ theme }) => theme.colors.purple};
   flex-direction: row;
   justify-content: center;

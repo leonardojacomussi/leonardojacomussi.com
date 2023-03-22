@@ -4,15 +4,18 @@ import useCustomThemeContext from "../../hooks/useCustomThemeContext";
 import { CustomThemeContextProps } from "../../interfaces";
 /**Styles */
 import { Container } from "./styles";
+/**Props */
+import SwitchThemeProps from "./SwitchThemeProps";
 
-
-const SwitchTheme: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+const SwitchTheme: FC<SwitchThemeProps> = ({ t, ...props }) => {
   const { currentTheme, changeCurrentTheme }: CustomThemeContextProps = useCustomThemeContext();
   return (
-    <Container {...props}>
+    <Container {...props} title={t("header.changeTheme")}>
       {currentTheme && <Switch
         sx={{ m: 1 }}
         value={currentTheme}
+        aria-label={t("header.changeTheme")}
+        title={t("header.changeTheme")}
         onClick={(e) => {
           if (e) e.preventDefault();
           const target = e.target as HTMLInputElement;

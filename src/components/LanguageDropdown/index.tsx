@@ -18,7 +18,7 @@ const LanguageDropdown: FC<LanguageDropdownProps> = ({ t, onClick, ...props }): 
   const [openAnchorMenu, setOpenAnchorMenu] = useState<boolean>(false);
   return (
     <Container {...props}>
-      <IconButton onClick={() => setOpenAnchorMenu(true)} ref={anchorRef}>
+      <IconButton aria-label={t("header.language")} onClick={() => setOpenAnchorMenu(true)} ref={anchorRef}>
         <LanguageIcon classes={{ root: classes.icon }} />
       </IconButton>
       <AnchorMenu

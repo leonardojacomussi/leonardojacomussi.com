@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Button from "../../../../components/Button";
 /**Props */
@@ -19,6 +20,28 @@ import ufsmImg from "../../../../../public/assets/icons/ufsm.png";
 import udemyImg from "../../../../../public/assets/icons/udemy.png";
 
 const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
+
+  const downloadCV = () => {
+    const xhr: XMLHttpRequest = new XMLHttpRequest();
+    xhr.responseType = "blob";
+    xhr.open("GET", "/assets/docs/Leonardo_Jacomussi_Resume.pdf");
+    xhr.send();
+    xhr.onload = (event: ProgressEvent<EventTarget>): void => {
+      if (event.currentTarget["status"] === 200) {
+        const blob = xhr.response;
+        const link: HTMLAnchorElement = document.createElement("a");
+        link.target = "_blank";
+        const newURL = window.URL.createObjectURL(blob);
+        document.body.appendChild(link);
+        link.href = newURL;
+        link.download = `Leonardo_Jacomussi_Resume.pdf`;
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(newURL);
+      };
+    };
+  };
+
   return (
     <Grid id="qualifications">
       <QualificationsContainer>
@@ -63,12 +86,16 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
 
           <DownloadCV2 id="download-cv">
             <div>
-              <Button>Download CV</Button>
+              <Button onClick={downloadCV}>
+                Download CV
+              </Button>
             </div>
           </DownloadCV2>
         </Experience>
         <DownloadCV>
-          <Button>Download CV</Button>
+          <Button onClick={downloadCV}>
+            Download CV
+          </Button>
         </DownloadCV>
         <EducationTitle className="hiddenY delay100">{t("home.qualifications.education.title")}</EducationTitle>
         <Education className="hiddenX delay100">

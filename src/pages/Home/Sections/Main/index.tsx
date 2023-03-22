@@ -10,7 +10,7 @@ import {
 } from "./styles";
 /**Props */
 import MainProps from "./MainProps";
-import meImg from "../../../../../public/assets/others/Me.png";
+import meImg from "../../../../../public/assets/others/Me-min.png";
 
 const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
   const router: NextRouter = useRouter();
@@ -35,12 +35,12 @@ const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
           {t("home.main.description")}
         </Description>
         <CallToAction>
-          <LinkScroll activeClass="activeSection" to="contact" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
+          <LinkScroll href="#contact" activeClass="activeSection" to="contact" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
             <Button style={{ width: "11.5rem", height: "6rem" }}>
               {t("header.contact")}
             </Button>
           </LinkScroll>
-          <LinkScroll activeClass="activeSection" to="portfolio" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
+          <LinkScroll href="#portfolio" activeClass="activeSection" to="portfolio" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
             <>{t("header.portfolio")} {">"} </>
           </LinkScroll>
         </CallToAction>

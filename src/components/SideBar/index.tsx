@@ -49,31 +49,31 @@ const SideBar: FC<SideBarProps> = ({ t, ...props }): JSX.Element => {
         <List classes={{ root: classes.list }}>
           <Divider />
           <ListItem key="services" classes={{ root: classes.listItem }}>
-            <LinkScroll onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+            <LinkScroll href="#services" onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
               {t("header.services")}
             </LinkScroll>
           </ListItem>
 
           <ListItem key="about-me" classes={{ root: classes.listItem }}>
-            <LinkScroll onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="about-me" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+            <LinkScroll href="#about-me" onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="about-me" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
               {t("header.aboutMe")}
             </LinkScroll>
           </ListItem>
 
           <ListItem key="qualifications" classes={{ root: classes.listItem }}>
-            <LinkScroll onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="qualifications" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+            <LinkScroll href="#qualifications" onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="qualifications" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
               {t("header.qualifications")}
             </LinkScroll>
           </ListItem>
 
           <ListItem key="portfolio" classes={{ root: classes.listItem }}>
-            <LinkScroll onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="portfolio" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+            <LinkScroll href="#portfolio" onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="portfolio" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
               {t("header.portfolio")}
             </LinkScroll>
           </ListItem>
 
           <ListItem key="contact" classes={{ root: classes.listItem }}>
-            <LinkScroll  onClick={handleDrawerClose} activeClass="activeSection" offset={-100} to="contact" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+            <LinkScroll href="#contact"  onClick={handleDrawerClose} activeClass="activeSection" offset={-100} to="contact" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
               <Button style={{ width: "11.5rem", height: "6rem" }}>
                 {t("header.contact")}
               </Button>
@@ -82,7 +82,7 @@ const SideBar: FC<SideBarProps> = ({ t, ...props }): JSX.Element => {
 
           <Divider classes={{ root: classes.divider }} />
           <ListItem key="theme-language" classes={{ root: classes.listItem }}>
-            <SwitchTheme onClick={handleDrawerClose} />
+            <SwitchTheme t={t} onClick={handleDrawerClose} />
             <LanguageDropdown t={t} onClick={handleDrawerClose} />
           </ListItem>
         </List>

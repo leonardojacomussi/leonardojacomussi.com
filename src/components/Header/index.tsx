@@ -32,29 +32,29 @@ const Header: FC<HeaderProps> = ({ t }) => {
     <Grid ref={headerRef} isOnTop={isOnTop}>
       <HeaderContainer>
         <Logo className="header-animate">
-          <LinkScroll activeClass="activeSection" offset={-100} to="top" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#top" activeClass="activeSection" offset={-100} to="top" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             Leonardo<br />Jacomussi
           </LinkScroll>
         </Logo>
         <Middle>
-          <LinkScroll className="header-animate" activeClass="activeSection" offset={-100} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#services" className="header-animate" activeClass="activeSection" offset={-100} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             {t("header.services")}
           </LinkScroll>
-          <LinkScroll className="header-animate" activeClass="activeSection" offset={-100} to="about-me" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#about-me" className="header-animate" activeClass="activeSection" offset={-100} to="about-me" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             {t("header.aboutMe")}
           </LinkScroll>
-          <LinkScroll className="header-animate" activeClass="activeSection" offset={-100} to="qualifications" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#qualifications" className="header-animate" activeClass="activeSection" offset={-100} to="qualifications" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             {t("header.qualifications")}
           </LinkScroll>
-          <LinkScroll className="header-animate" activeClass="activeSection" offset={-100} to="portfolio" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#portfolio" className="header-animate" activeClass="activeSection" offset={-100} to="portfolio" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             {t("header.portfolio")}
           </LinkScroll>
           <LanguageDropdown className="header-animate" t={t} />
-          <SwitchTheme className="header-animate" />
+          <SwitchTheme t={t} className="header-animate" />
         </Middle>
         <Right>
           <SideBar className="header-animate" t={t} />
-          <LinkScroll className="header-animate" activeClass="activeSection" offset={-100} to="contact" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+          <LinkScroll href="#contact" className="header-animate" activeClass="activeSection" offset={-100} to="contact" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
             <Button style={{ width: "11.5rem", height: "6rem" }}>
               {t("header.contact")}
             </Button>
