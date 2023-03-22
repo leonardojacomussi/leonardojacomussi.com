@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
@@ -6,6 +6,7 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
+    formats: ["image/avif", "image/webp"],
   },
   serverRuntimeConfig: {
     PROJECT_ROOT: __dirname

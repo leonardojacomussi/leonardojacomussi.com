@@ -36,7 +36,7 @@ const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
           </h3>
         </Subtitle>
         <Me>
-          <Image src={meImg.src} alt="Leonardo Jacomussi" quality={40} fill sizes="100%" priority/>
+          <Image src={meImg.src} alt="Leonardo Jacomussi" quality={75} width={460} height={670} sizes="100%" priority/>
         </Me>
         <Description className="p1">
           {t("home.main.description")}
