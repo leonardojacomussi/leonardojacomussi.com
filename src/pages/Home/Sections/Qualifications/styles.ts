@@ -129,6 +129,7 @@ export const Experience = styled.div<HTMLAttributes<HTMLDivElement>>`
 
   #download-cv {
     display: flex;
+    min-height: 28rem;
   };
 
   @media(max-width: 900px) {
