@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
@@ -51,9 +51,9 @@ const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
   );
 };
 
-export const getStaticProps = async ({ locale, ...props }): Promise<{ props: HomeStaticProps }> => {
+export const getStaticProps: GetStaticProps = async ({ locale, ...props }): Promise<{ props: HomeStaticProps, revalidate: number }> => {
   const dictionary = await dictionaries[locale]();
-  return { props: { dictionary: dictionary } }
+  return { props: { dictionary: dictionary }, revalidate: 86400 }
 };
 
 export default Home;

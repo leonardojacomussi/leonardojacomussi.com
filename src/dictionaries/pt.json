@@ -15,7 +15,7 @@
     "english": "Inglês"
   },
   "footer": {
-    "copy": "© 2023 - Leonardo Jacomussi",
+    "copy": "© $YEAR - Leonardo Jacomussi",
     "coffee": "Compre um ☕ para mim!"
   },
   "home": {
@@ -30,9 +30,9 @@
       "iLiveIn": "Moro em",
       "saoPaulo": "São Paulo",
       "experience": "Experiência",
-      "3years": "3 anos",
+      "timeExperience": "$NUM anos",
       "age": "Idade",
-      "myAge": "26 anos"
+      "myAge": "$NUM anos"
     },
     "services": {
       "title": "SERVIÇOS",
@@ -79,14 +79,14 @@
       "work": {
         "harmonia": {
           "title": "Harmonia",
-          "timeTotal": "3 anos e 2 meses",
+          "timeTotal": "$NUMYEAR anos e $NUMMONTHS meses",
           "local": "São Paulo, São Paulo, Brasil",
           "assignments": {
             "eng": {
               "title": "Engenheiro Acústico | Desenvolvedor Fullstack",
               "period": "Tempo integral",
               "team": "Time de Inovação",
-              "time": "jan de 2021 - o momento | 2 anos e 2 meses"
+              "time": "jan de 2021 - o momento | $NUMYEAR anos e $NUMMONTHS meses"
             },
             "intern": {
               "title": "Estágio",

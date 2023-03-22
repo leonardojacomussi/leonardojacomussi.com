@@ -9,7 +9,7 @@ const Footer: FC<FooterProps> = ({ t }) => {
   return (
     <Grid>
       <FooterContainer>
-        <p className="p1">{t("footer.copy")}</p>
+        <p className="p1">{t("footer.copy").replace("$YEAR", String((new Date()).getFullYear()))}</p>
         <Link className="a" href="mailto:dev@leonardojacomussi.com" target="_blank">dev@leonardojacomussi.com</Link>
         <Link className="a" href="https://www.buymeacoffee.com/jacomussi" target="_blank">{t("footer.coffee")}</Link>
       </FooterContainer>

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import { differenceInYears } from "date-fns";
 import { useRouter, NextRouter } from "next/router";
 import { Link as LinkScroll } from "react-scroll";
 import Button from "../../../../components/Button";
@@ -13,6 +14,12 @@ import MainProps from "./MainProps";
 import meImg from "../../../../../public/assets/others/Me-min.png";
 
 const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
+  const dateOfBirth: Date = new Date("1996-09-27T00:00:00.000-03:00");
+  const startDateOfExperience = new Date("2020-01-01T00:00:00.000-03:00");
+  const today: Date = new Date();
+  const myAge: number = differenceInYears(today, dateOfBirth);
+  const myTimeOfExperience: number = differenceInYears(today, startDateOfExperience);
+
   const router: NextRouter = useRouter();
   return (
     <Grid>
@@ -51,11 +58,11 @@ const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
           </div>
           <div className="info-container hiddenX delay200">
             <span className="info-title">{t("home.main.experience")}</span>
-            <h5 className="info-content">{t("home.main.3years")}</h5>
+            <h5 className="info-content">{t("home.main.timeExperience").replace("$NUM", String(myTimeOfExperience))}</h5>
           </div>
           <div className="info-container hiddenX delay100">
             <span className="info-title">{t("home.main.age")}</span>
-            <h5 className="info-content">{t("home.main.myAge")}</h5>
+            <h5 className="info-content">{t("home.main.myAge").replace("$NUM", String(myAge))}</h5>
           </div>
         </Infos>
       </MainContainer>

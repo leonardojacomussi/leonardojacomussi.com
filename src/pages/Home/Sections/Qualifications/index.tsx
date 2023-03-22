@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Button from "../../../../components/Button";
+import { differenceInYears, differenceInMonths } from "date-fns";
 /**Props */
 import QualificationsProps from "./QualificationsProps";
 /**Styles */
@@ -20,6 +20,10 @@ import ufsmImg from "../../../../../public/assets/icons/ufsm.png";
 import udemyImg from "../../../../../public/assets/icons/udemy.png";
 
 const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
+  const startDateOfWorkAtHarmonia = new Date("2021-01-01T00:00:00.000-03:00");
+  const today: Date = new Date();
+  const timeOfWorkHarmoniaInYears: number = differenceInYears(today, startDateOfWorkAtHarmonia);
+  const timeOfWorkHarmoniaInMonths: number = differenceInMonths(today, startDateOfWorkAtHarmonia) % 12;
 
   const downloadCV = () => {
     const xhr: XMLHttpRequest = new XMLHttpRequest();
@@ -51,7 +55,13 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
           <HarmoniaTitle>
             <h5>{t("home.qualifications.work.harmonia.title")}</h5>
             <div>
-              <span>{t("home.qualifications.work.harmonia.timeTotal")}</span>
+              <span>
+                {
+                  t("home.qualifications.work.harmonia.timeTotal")
+                    .replace("$NUMYEAR", String(timeOfWorkHarmoniaInYears + 1))
+                    .replace("$NUMMONTHS", String(timeOfWorkHarmoniaInMonths))
+                }
+              </span>
               <span>{t("home.qualifications.work.harmonia.local")}</span>
             </div>
           </HarmoniaTitle>
@@ -76,7 +86,13 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
             <h6>{t("home.qualifications.work.harmonia.assignments.eng.title")}</h6>
             <p className="overline">{t("home.qualifications.work.harmonia.assignments.eng.period")}</p>
             <p className="overline">{t("home.qualifications.work.harmonia.assignments.eng.team")}</p>
-            <p className="overline">{t("home.qualifications.work.harmonia.assignments.eng.time")}</p>
+            <p className="overline">
+              {
+                t("home.qualifications.work.harmonia.assignments.eng.time")
+                  .replace("$NUMYEAR", String(timeOfWorkHarmoniaInYears))
+                  .replace("$NUMMONTHS", String(timeOfWorkHarmoniaInMonths))
+              }
+            </p>
           </CurrentAssignment>
           <Intern>
             <h6>{t("home.qualifications.work.harmonia.assignments.intern.title")}</h6>
