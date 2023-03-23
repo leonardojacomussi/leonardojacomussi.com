@@ -24,10 +24,10 @@ export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
   grid-template-columns: auto;
   grid-template-rows: repeat(3, auto);
   grid-template-areas:
-    "copy-area"
-    "email-area"
-    "coffee-area";
-  gap: 1rem;
+    "coffee-area"
+    "network-area"
+    "copy-area";
+  gap: 2rem 1rem;
   padding: 1.5rem 0;
   justify-content: center;
   align-items: center;
@@ -41,38 +41,46 @@ export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
     grid-area: copy-area;
   };
 
-  .a:nth-of-type(1){
-    grid-area: email-area;
+  div {
+    grid-area: network-area;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    height: auto;
+    column-gap: 3rem;
+    justify-self: center;
   };
 
-  .a:nth-of-type(2){
+  .a {
     grid-area: coffee-area;
   };
 
   @media(min-width: 750px) {
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas:
-      "copy-area copy-area"
-      "email-area coffee-area";
-    justify-content: space-between;
-  };
-
-  @media(min-width: 900px) {
-    grid-template-columns: calc(50% - 1rem) calc(25% - .5rem) calc(25% - .5rem);
     grid-template-rows: auto;
-    grid-template-areas:"copy-area email-area coffee-area";
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas:"copy-area network-area coffee-area";
+    justify-content: space-between;
 
     p {
       text-align: left;
     };
     
-    .a:nth-of-type(1){
-      text-align: left;
+    div {
+      justify-self: center;
     };
     
-    .a:nth-of-type(2){
+    .a {
       text-align: right;
+    };
+  };
+
+  @media(min-width: 900px) {
+    grid-template-columns: calc(50% - 1rem) calc(25% - .5rem) calc(25% - .5rem);
+
+    div {
+      justify-self: flex-start;
     };
   };
 `;
