@@ -19,17 +19,17 @@ import linkedinDark from "../../../../../public/assets/icons/linkedinDark.svg";
 import linkedinLight from "../../../../../public/assets/icons/linkedinLight.svg";
 import nextjsLight from "../../../../../public/assets/icons/nextjsLight.svg";
 import nextjsDark from "../../../../../public/assets/icons/nextjsDark.svg";
-import reactjs from "../../../../../public/assets/icons/reactjs.png";
+import reactjs from "../../../../../public/assets/icons/reactjs.webp";
 import javascript from "../../../../../public/assets/icons/javascript.svg";
 import typescript from "../../../../../public/assets/icons/typescript.svg";
-import html from "../../../../../public/assets/icons/html.png";
-import css from "../../../../../public/assets/icons/css.png";
-import emotion from "../../../../../public/assets/icons/emotion.png";
-import figma from "../../../../../public/assets/icons/figma.png";
+import html from "../../../../../public/assets/icons/html.webp";
+import css from "../../../../../public/assets/icons/css.webp";
+import emotion from "../../../../../public/assets/icons/emotion.webp";
+import figma from "../../../../../public/assets/icons/figma.webp";
 import prismic from "../../../../../public/assets/icons/prismic.svg";
-import mui from "../../../../../public/assets/icons/mui.png";
-import nodejs from "../../../../../public/assets/icons/nodejs.png";
-import python from "../../../../../public/assets/icons/python.png";
+import mui from "../../../../../public/assets/icons/mui.webp";
+import nodejs from "../../../../../public/assets/icons/nodejs.webp";
+import python from "../../../../../public/assets/icons/python.webp";
 
 const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
   const theme: Theme = useTheme();
@@ -49,11 +49,12 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             {t("home.about.description3")}
           </p>
           <NetworkContainer  className="hiddenX delay100">
-            <Link href="https://github.com/leonardojacomussi" target="_blank">
+            <Link rel="external" href="https://github.com/leonardojacomussi" target="_blank">
               <NetworkItem title={t("home.about.github")}>
                 <Image
                   width={32}
                   height={32}
+                  loading="lazy"
                   alt={t("home.about.github")}
                   title={t("home.about.github")}
                   src={theme.theme === "dark" ? githubLight.src : githubDark.src}
@@ -61,11 +62,12 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
                 <span>{t("home.about.github")}</span>
               </NetworkItem>
             </Link>
-            <Link href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
+            <Link rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
               <NetworkItem title={t("home.about.linkedin")}>
                 <Image
                   width={32}
                   height={32}
+                  loading="lazy"
                   alt={t("home.about.linkedin")}
                   title={t("home.about.linkedin")}
                   src={theme.theme === "dark" ? linkedinLight.src : linkedinDark.src}
@@ -73,11 +75,12 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
                 <span>{t("home.about.linkedin")}</span>
               </NetworkItem>
             </Link>
-            <Link href="https://www.researchgate.net/profile/Leonardo-Jacomussi" target="_blank">
+            <Link rel="external" href="https://www.researchgate.net/profile/Leonardo-Jacomussi" target="_blank">
               <NetworkItem title={t("home.about.researchgate")}>
                 <Image
                   width={32}
                   height={32}
+                  loading="lazy"
                   alt={t("home.about.researchgate")}
                   title={t("home.about.researchgate")}
                   src={theme.theme === "dark" ? researchgateLight.src : researchgateDark.src}
@@ -93,6 +96,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.nextjs")}
               title={t("home.about.nextjs")}
               src={theme.theme === "dark" ? nextjsLight.src : nextjsDark.src} />
@@ -101,6 +105,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.reactjs")}
               title={t("home.about.reactjs")}
               src={reactjs.src} />
@@ -109,6 +114,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.javascript")}
               title={t("home.about.javascript")}
               src={javascript.src} />
@@ -117,6 +123,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.typescript")}
               title={t("home.about.typescript")}
               src={typescript.src} />
@@ -125,6 +132,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.html")}
               title={t("home.about.html")}
               src={html.src} />
@@ -133,6 +141,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.css")}
               title={t("home.about.css")}
               src={css.src} />
@@ -141,6 +150,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.emotion")}
               title={t("home.about.emotion")}
               src={emotion.src} />
@@ -149,6 +159,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.figma")}
               title={t("home.about.figma")}
               src={figma.src} />
@@ -157,6 +168,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.prismic")}
               title={t("home.about.prismic")}
               src={prismic.src} />
@@ -165,6 +177,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.mui")}
               title={t("home.about.mui")}
               src={mui.src} />
@@ -173,6 +186,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.nodejs")}
               title={t("home.about.nodejs")}
               src={nodejs.src} />
@@ -181,6 +195,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
             <Image
               width={50}
               height={50}
+              loading="lazy"
               alt={t("home.about.python")}
               title={t("home.about.python")}
               src={python.src} />

@@ -24,7 +24,7 @@ const BackToTop: FC<BackToTopProps> = ({ t, main }): JSX.Element => {
   }, []);
 
   return (
-    <LinkScroll href="#top" activeClass="activeSection" to="top" spy smooth offset={-100} hashSpy={false} isdynamicduration={0}>
+    <LinkScroll rel="top" href="#top" activeClass="activeSection" to="top" spy smooth offset={-100} hashSpy={false} isdynamicduration={0}>
       <Container isVisible={isVisible} title={t("backToTop")}>
         <KeyboardDoubleArrowUpIcon sx={{ fill: theme.colors.white }} />
       </Container>

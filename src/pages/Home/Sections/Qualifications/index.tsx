@@ -14,10 +14,10 @@ import {
 
 } from "./styles";
 /**Files */
-import harmoniaImg from "../../../../../public/assets/icons/harmonia.png";
-import rocketseatImg from "../../../../../public/assets/icons/rocketseat.png";
-import ufsmImg from "../../../../../public/assets/icons/ufsm.png";
-import udemyImg from "../../../../../public/assets/icons/udemy.png";
+import harmoniaImg from "../../../../../public/assets/icons/harmonia.webp";
+import rocketseatImg from "../../../../../public/assets/icons/rocketseat.webp";
+import ufsmImg from "../../../../../public/assets/icons/ufsm.webp";
+import udemyImg from "../../../../../public/assets/icons/udemy.webp";
 
 const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
   const startDateOfWorkAtHarmonia = new Date("2021-01-01T00:00:00.000-03:00");
@@ -70,6 +70,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               width={32}
               height={32}
               quality={100}
+              loading="lazy"
               alt={t("home.qualifications.work.harmonia.title")}
               title={t("home.qualifications.work.harmonia.title")}
               src={harmoniaImg.src}
@@ -114,6 +115,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
                 width={32}
                 height={32}
                 quality={100}
+                loading="lazy"
                 alt={t("home.qualifications.education.rocketseat.title")}
                 title={t("home.qualifications.education.rocketseat.title")}
                 src={rocketseatImg.src}
@@ -138,6 +140,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
                 width={32}
                 height={32}
                 quality={100}
+                loading="lazy"
                 alt={t("home.qualifications.education.udemy.title")}
                 title={t("home.qualifications.education.udemy.title")}
                 src={udemyImg.src}
@@ -167,6 +170,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
                 width={32}
                 height={32}
                 quality={100}
+                loading="lazy"
                 alt={t("home.qualifications.education.ufsm.title")}
                 title={t("home.qualifications.education.ufsm.title")}
                 src={ufsmImg.src}
