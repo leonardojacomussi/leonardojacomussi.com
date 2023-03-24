@@ -18,6 +18,11 @@
     "copy": "© $YEAR - Leonardo Jacomussi",
     "coffee": "Buy me a ☕!"
   },
+  "404": {
+    "title": "Page not found",
+    "content": "This page could not be found.",
+    "btnGoToHome": "Go to Home"
+  },
   "home": {
     "main": {
       "hello": "Hey, I'm Leonardo",

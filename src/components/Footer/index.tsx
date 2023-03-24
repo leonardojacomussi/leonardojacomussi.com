@@ -19,7 +19,7 @@ import linkedinLight from "../../../public/assets/icons/linkedinLight.svg";
 const Footer: FC<FooterProps> = ({ t }) => {
   const theme: Theme = useTheme();
   return (
-    <Grid>
+    <Grid id="footer">
       <FooterContainer>
         <p className="p1">{t("footer.copy").replace("$YEAR", String((new Date()).getFullYear()))}</p>
         <div>

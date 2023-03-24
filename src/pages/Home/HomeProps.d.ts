@@ -1,5 +1,3 @@
-import { WhithThemeWrapperProps } from "./../../styles/whithTheme";
-
 export interface HomeStaticProps {
 	dictionary: any,
 };

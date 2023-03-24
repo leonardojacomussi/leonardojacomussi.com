@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 import { Fragment, useEffect, useState } from "react";
 import LoadingContent from "../components/LoadingContent";
-import HomeProps, { HomeStaticProps } from "./Home/HomeProps";
 /**Sections */
 import Main from "./Home/Sections/Main";
 import Services from "./Home/Sections/Services";
@@ -19,6 +18,8 @@ import { getTranslator, Translator, dictionaries } from "../i18n";
 import { MutableRefObject, useRef } from "react";
 /**Helpers */
 import { setAnimations } from "./Home/helpers";
+/**Props */
+import HomeProps, { HomeStaticProps } from "./Home/HomeProps";
 
 const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);

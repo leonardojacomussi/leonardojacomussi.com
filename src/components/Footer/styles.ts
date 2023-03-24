@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 export const Grid = styled.div<HTMLAttributes<HTMLElement>>`
   grid-area: footer-area;
   width: 100%;
-  height: auto;
+  height: fit-content;
   display: grid;
   grid-template-columns: .28fr 3fr .28fr;
   grid-template-rows: auto;
