@@ -12,7 +12,7 @@ import {
   AwardContainer, AwardItem
 } from "./styles";
 /**Files */
-import otohMockup from "../../../../../public/assets/others/otohMockup.webp";
+import otohMockup from "../../../../../public/assets/others/otohmockup.webp";
 
 const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
   const router: NextRouter = useRouter();
