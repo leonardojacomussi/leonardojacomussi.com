@@ -23,6 +23,11 @@
     "content": "This page could not be found.",
     "btnGoToHome": "Go to Home"
   },
+  "500": {
+    "title": "Server-side error",
+    "content": "Server-side error occurred.",
+    "btnGoToHome": "Go to Home"
+  },
   "home": {
     "main": {
       "hello": "Hey, I'm Leonardo",

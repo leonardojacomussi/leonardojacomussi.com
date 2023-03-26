@@ -23,6 +23,11 @@
     "content": "Esta página não pôde ser encontrada.",
     "btnGoToHome": "Ir para a página principal"
   },
+  "500": {
+    "title": "Erro no servidor",
+    "content": "Ocorreu um erro no servidor.",
+    "btnGoToHome": "Ir para a página principal"
+  },
   "home": {
     "main": {
       "hello": "Oi, eu sou o Leonardo",
