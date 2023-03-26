@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
 import { differenceInYears } from "date-fns";
+import Link from "../../../../components/Link";
 import { useRouter, NextRouter } from "next/router";
-import { Link as LinkScroll } from "react-scroll";
 import Button from "../../../../components/Button";
 /**Styles */
 import {
@@ -13,7 +13,7 @@ import {
 import MainProps from "./MainProps";
 import meImg from "../../../../../public/assets/others/Me-min.webp";
 
-const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
+const Main: FC<MainProps> = ({ t, ...props }): JSX.Element => {
   const dateOfBirth: Date = new Date("1996-09-27T00:00:00.000-03:00");
   const startDateOfExperience = new Date("2020-01-01T00:00:00.000-03:00");
   const today: Date = new Date();
@@ -23,7 +23,7 @@ const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
   const router: NextRouter = useRouter();
   return (
     <Grid>
-      <MainContainer ref={mainRef} id="top" {...props}>
+      <MainContainer id="top" {...props}>
         <Hello className={router.locale}>
           {t("home.main.hello").slice(0, t("home.main.hello").indexOf("Leonardo"))}
           <br />
@@ -42,14 +42,14 @@ const Main: FC<MainProps> = ({ t, mainRef, ...props }): JSX.Element => {
           {t("home.main.description")}
         </Description>
         <CallToAction>
-          <LinkScroll rel="contact" href="#contact" activeClass="activeSection" to="contact" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
+          <Link scroll rel="contact" href="#contact" to="contact">
             <Button style={{ width: "11.5rem", height: "6rem" }}>
               {t("header.contact")}
             </Button>
-          </LinkScroll>
-          <LinkScroll rel="portfolio" href="#portfolio" activeClass="activeSection" to="portfolio" offset={-100} spy smooth hashSpy={false} isdynamicduration={0}>
+          </Link>
+          <Link scroll rel="portfolio" href="#portfolio" to="portfolio">
             <>{t("header.portfolio")} {">"} </>
-          </LinkScroll>
+          </Link>
         </CallToAction>
         <Infos>
           <div className="info-container hiddenX delay300">

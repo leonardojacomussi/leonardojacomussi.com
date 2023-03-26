@@ -1,9 +1,8 @@
-import { FC, useEffect, useRef, MutableRefObject, useState, Fragment } from "react";
+import { FC, useEffect, useRef, MutableRefObject, useState } from "react";
 import Button from "../Button";
-import Link from "next/link";
 import SideBar from "../SideBar";
+import Link from "../Link";
 import SwitchTheme from "../SwitchTheme";
-import { Link as LinkScroll } from "react-scroll";
 import LanguageDropdown from "../LanguageDropdown";
 import { useRouter, NextRouter } from "next/router";
 /**Styles */
@@ -18,6 +17,7 @@ import { listenToScroll } from "./helpers";
 const Header: FC<HeaderProps> = ({ t }) => {
   const router: NextRouter = useRouter();
   const [isOnTop, setIsOnTop] = useState(false);
+  const isHome: boolean = router.pathname === "/";
   const headerRef: MutableRefObject<HTMLDivElement> = useRef();
 
   useEffect(() => {
@@ -34,66 +34,33 @@ const Header: FC<HeaderProps> = ({ t }) => {
     <Grid ref={headerRef} isOnTop={isOnTop}>
       <HeaderContainer>
         <Logo className="header-animate">
-          {
-            router.pathname === "/"
-              ? <LinkScroll rel="top" href="#top" activeClass="activeSection" offset={-100} to="top" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                Leonardo<br />Jacomussi
-              </LinkScroll>
-              : <Link rel="top" href="/">
-                Leonardo<br />Jacomussi
-              </Link>
-          }
+          <Link scroll={isHome} href={isHome ? "#top" : "/"} to="top" rel="top">
+            Leonardo<br />Jacomussi
+          </Link>
         </Logo>
         <Middle>
-          {
-            router.pathname === "/"
-              ? <Fragment>
-                <LinkScroll rel="services" href="#services" className="header-animate" activeClass="activeSection" offset={-100} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                  {t("header.services")}
-                </LinkScroll>
-                <LinkScroll rel="about-me" href="#about-me" className="header-animate" activeClass="activeSection" offset={-100} to="about-me" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                  {t("header.aboutMe")}
-                </LinkScroll>
-                <LinkScroll rel="qualifications" href="#qualifications" className="header-animate" activeClass="activeSection" offset={-100} to="qualifications" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                  {t("header.qualifications")}
-                </LinkScroll>
-                <LinkScroll rel="portfolio" href="#portfolio" className="header-animate" activeClass="activeSection" offset={-100} to="portfolio" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                  {t("header.portfolio")}
-                </LinkScroll>
-              </Fragment>
-              : <Fragment>
-                <Link rel="services" href="/#services" className="header-animate">
-                  {t("header.services")}
-                </Link>
-                <Link rel="about-me" href="/#about-me" className="header-animate">
-                  {t("header.aboutMe")}
-                </Link>
-                <Link rel="qualifications" href="/#qualifications" className="header-animate">
-                  {t("header.qualifications")}
-                </Link>
-                <Link rel="portfolio" href="/#portfolio" className="header-animate">
-                  {t("header.portfolio")}
-                </Link>
-              </Fragment>
-          }
+          <Link scroll={isHome} href={isHome ? "#services" : "/#services"} rel="services" className="header-animate" to="services">
+            {t("header.services")}
+          </Link>
+          <Link scroll={isHome} href={isHome ? "#about-me" : "/#about-me"} rel="about-me" className="header-animate" to="about-me">
+            {t("header.aboutMe")}
+          </Link>
+          <Link scroll={isHome} href={isHome ? "#qualifications" : "/#qualifications"} rel="qualifications" className="header-animate" to="qualifications">
+            {t("header.qualifications")}
+          </Link>
+          <Link scroll={isHome} href={isHome ? "#portfolio" : "/#portfolio"} rel="portfolio" className="header-animate" to="portfolio">
+            {t("header.portfolio")}
+          </Link>
           <LanguageDropdown className="header-animate" t={t} />
           <SwitchTheme t={t} className="header-animate" />
         </Middle>
         <Right>
           <SideBar className="header-animate" t={t} />
-          {
-            router.pathname === "/"
-              ? <LinkScroll rel="contact" href="#contact" className="header-animate" activeClass="activeSection" offset={-100} to="contact" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-                <Button style={{ width: "11.5rem", height: "6rem" }}>
-                  {t("header.contact")}
-                </Button>
-              </LinkScroll>
-              : <Link rel="contact" href="/#contact" className="header-animate">
-                <Button style={{ width: "11.5rem", height: "6rem" }}>
-                  {t("header.contact")}
-                </Button>
-              </Link>
-          }
+          <Link scroll={isHome} href={isHome ? "#contact" : "/#contact"} rel="contact" className="header-animate" to="contact">
+            <Button style={{ width: "11.5rem", height: "6rem" }}>
+              {t("header.contact")}
+            </Button>
+          </Link>
         </Right>
       </HeaderContainer>
     </Grid>

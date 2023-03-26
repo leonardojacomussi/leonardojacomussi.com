@@ -15,7 +15,6 @@ import Contact from "./Home/Sections/Contact";
 /**Styles */
 import { Container } from "./Home/styles";
 import { getTranslator, Translator, dictionaries } from "../i18n";
-import { MutableRefObject, useRef } from "react";
 /**Helpers */
 import { setAnimations } from "./Home/helpers";
 /**Props */
@@ -23,7 +22,6 @@ import HomeProps, { HomeStaticProps } from "./Home/HomeProps";
 
 const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);
-  const mainRef: MutableRefObject<HTMLElement> = useRef(null);
   const [openLoadingContent, setOpenLoadingContent] = useState<boolean>(true);
 
   useEffect(() => {
@@ -38,14 +36,14 @@ const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
       </Head>
       <Container>
         <Header t={t} />
-        <Main t={t} mainRef={mainRef} />
+        <Main t={t} />
         <Services t={t} />
         <AboutMe t={t} />
         <Qualifications t={t} />
         <Portfolio t={t} />
         <Contact t={t} setOpenLoadingContent={setOpenLoadingContent} />
         <Footer t={t} />
-        <BackToTop t={t} main={mainRef.current} />
+        <BackToTop t={t}/>
         <LoadingContent open={openLoadingContent} />
       </Container>
     </Fragment>

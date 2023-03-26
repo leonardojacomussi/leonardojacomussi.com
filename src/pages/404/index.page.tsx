@@ -15,7 +15,6 @@ import NotFoundProps, { NotFoundStaticProps } from "./NotFoundProps";
 
 const NotFoundPage: NextPage<NotFoundProps> = ({ dictionary }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);
-  console.log("aqui")
   return (
     <Fragment>
       <Head>

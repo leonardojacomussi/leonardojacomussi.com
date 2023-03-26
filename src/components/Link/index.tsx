@@ -1,31 +1,36 @@
-import { FC, HTMLAttributes } from "react";
-import Link from "next/link";
+import { FC, ReactNode } from "react";
+import Link, { LinkProps } from "next/link";
 import { Link as LinkScroll } from "react-scroll";
-import { useRouter, NextRouter } from "next/router";
 
-interface CustomLinkProps extends HTMLAttributes<HTMLAnchorElement> {
-  to: string,
-  scroll: boolean
+interface CustomLinkProps extends LinkProps {
+  to?: string,
+  rel?: string,
+  scroll?: boolean
+  children?: ReactNode,
+  [key: string]: any,
 };
 
-const CustomLink: FC<CustomLinkProps> = ({ scroll, to, children, ...props }): JSX.Element => {
-  const router: NextRouter = useRouter();
-
-  if (scroll) {
+const CustomLink: FC<CustomLinkProps> = ({ scroll, to, children, href, ...props }): JSX.Element => {
+  if (scroll && to) {
     return (
-      <></>
-      // <LinkScroll  rel="services" href="#services" onClick={handleDrawerClose} activeClass="activeSection" offset={-90} to="services" spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
-      //   {children}
-      // </LinkScroll>
+      <LinkScroll {...props} activeClass="activeSection" offset={-90} to={to} spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+        {children}
+      </LinkScroll>
     );
   } else {
-    <></>
+    return (
+      <Link href={href} {...props}>
+        {children}
+      </Link>
+    );
   };
 };
 
 CustomLink.defaultProps = {
+  children: null,
   scroll: false,
-  to: ""
+  href: "#",
+  to: "",
 };
 
 export default CustomLink;
