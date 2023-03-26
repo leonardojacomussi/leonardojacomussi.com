@@ -27,7 +27,7 @@ export const Container = styled.div<HTMLAttributes<HTMLDivElement>>`
 
       & + .MuiSwitch-track {
         opacity: 1;
-        background-color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+        background-color: ${({ theme }: { theme: Theme }) => theme.colors.purple};
       };
     };
 
@@ -52,7 +52,7 @@ export const Container = styled.div<HTMLAttributes<HTMLDivElement>>`
 
     & .MuiSwitch-track {
       opacity: 1;
-      background-color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+      background-color: ${({ theme }: { theme: Theme }) => theme.colors.purple};
       border-radius: 20 / 2;
     };
   };
