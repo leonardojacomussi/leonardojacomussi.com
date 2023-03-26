@@ -38,7 +38,7 @@ This project was developed with the following technologies:
     <tbody>
         <tr>
           <td align="center">
-            <img width="30px" src="./public/assets/icons/reactjs.png" />
+            <img width="30px" src="./public/assets/icons/reactjs.webp" />
           </td>
           <td>React JS</td>
         </tr>
@@ -56,19 +56,19 @@ This project was developed with the following technologies:
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="./public/assets/icons/nodejs.png" />
+            <img width="30px" src="./public/assets/icons/nodejs.webp" />
           </td>
           <td>Node JS</td>
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="./public/assets/icons/emotion.png" />
+            <img width="30px" src="./public/assets/icons/emotion.webp" />
           </td>
           <td>Emotion</td>
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="./public/assets/icons/mui.png" />
+            <img width="30px" src="./public/assets/icons/mui.webp" />
           </td>
           <td>Mui Material</td>
         </tr>
@@ -80,7 +80,7 @@ This project was developed with the following technologies:
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="https://img.icons8.com/color/256/google-maps.png" />
+            <img width="30px" src="https://img.icons8.com/color/256/google-maps.webp" />
           </td>
           <td>Google Maps Api</td>
         </tr>
@@ -92,7 +92,7 @@ This project was developed with the following technologies:
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="./public/assets/icons/figma.png" />
+            <img width="30px" src="./public/assets/icons/figma.webp" />
           </td>
           <td>Figma</td>
         </tr>
