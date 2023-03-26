@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { HTMLAttributes } from "react";
+import { ContainerProps } from "./NotFoundProps";
 
-export const Container = styled.div<HTMLAttributes<HTMLDivElement>>`
+export const Container = styled.div<ContainerProps>`
   width: 100%;
-  height: 100vh;
+  height: ${props => props.height ? `${props.height}px` : "100vh"};
   min-height: 48rem;
   max-height: 100vh;
   display: grid;

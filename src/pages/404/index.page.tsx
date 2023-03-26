@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { NextPage, GetStaticProps } from "next";
@@ -12,16 +12,32 @@ import { Container , Content} from "./styles";
 /**Props */
 import NotFoundProps, { NotFoundStaticProps } from "./NotFoundProps";
 
-
 const NotFoundPage: NextPage<NotFoundProps> = ({ dictionary }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);
+  const [heightWindow, setHeightWindow] = useState<number>(null);
+
+  useEffect(() => {
+    const handleHeightWindow = () => {
+      setHeightWindow(window.innerHeight);
+    };
+
+    if (window) {
+      setHeightWindow(window.innerHeight);
+      window.addEventListener("resize", handleHeightWindow);
+    };
+
+    () => {
+      window.removeEventListener("resize", handleHeightWindow);
+    };
+  }, []);
+
   return (
     <Fragment>
       <Head>
         <meta name="description" content={t("metadata.description")} />
         <title>{t("404.title")}</title>
       </Head>
-      <Container>
+      <Container height={heightWindow}>
         <Header t={t} />
         <Content>
           <h1>404 | {t("404.content")}</h1>
