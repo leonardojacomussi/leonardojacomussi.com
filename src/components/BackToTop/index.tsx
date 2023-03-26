@@ -22,7 +22,7 @@ const BackToTop: FC<BackToTopProps> = ({ t }): JSX.Element => {
   }, []);
 
   return (
-    <Link scroll rel="top" href="#top" to="top">
+    <Link scroll rel="top" href="#top" to="top" aria-label={t("backToTop")}>
       <Container isVisible={isVisible} title={t("backToTop")}>
         <KeyboardDoubleArrowUpIcon sx={{ fill: theme.colors.white }} />
       </Container>
