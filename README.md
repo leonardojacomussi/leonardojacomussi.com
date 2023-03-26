@@ -80,7 +80,7 @@ This project was developed with the following technologies:
         </tr>
         <tr>
           <td align="center">
-            <img width="30px" src="https://img.icons8.com/color/256/google-maps.webp" />
+            <img width="30px" src="https://img.icons8.com/color/256/google-maps.png" />
           </td>
           <td>Google Maps Api</td>
         </tr>
