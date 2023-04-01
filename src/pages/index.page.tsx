@@ -22,10 +22,9 @@ import HomeProps, { HomeStaticProps } from "./Home/HomeProps";
 
 const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);
-  const [openLoadingContent, setOpenLoadingContent] = useState<boolean>(true);
+  const [openLoadingContent, setOpenLoadingContent] = useState<boolean>(false);
 
   useEffect(() => {
-    setOpenLoadingContent(false);
     setAnimations();
   }, []);
 

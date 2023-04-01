@@ -11,8 +11,10 @@ const SwitchTheme: FC<SwitchThemeProps> = ({ t, ...props }) => {
   const { currentTheme, changeCurrentTheme }: CustomThemeContextProps = useCustomThemeContext();
   return (
     <Container {...props} title={t("header.changeTheme")}>
+      <label htmlFor="changeThemeSwitch" className="sr-only">{t("header.changeTheme")}</label>
       {currentTheme && <Switch
         sx={{ m: 1 }}
+        inputProps={{ id: "changeThemeSwitch" }}
         value={currentTheme}
         title={t("header.changeTheme")}
         onClick={(e) => {

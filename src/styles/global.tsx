@@ -166,6 +166,98 @@ const GlobalStyles: FC = (): ReactElement => {
 					color: ${theme.colors.txt};
 				};
 
+				.sr-only {
+					position: absolute;
+					width: 1px;
+					height: 1px;
+					padding: 0;
+					margin: -1px;
+					overflow: hidden;
+					clip: rect(0,0,0,0);
+					white-space: nowrap;
+					border: 0;
+				};
+
+				.hiddenX {
+					opacity: 0;
+					filter: blur(.5rem);
+					transform: translateX(-100%);
+					transition: all 1s;
+				};
+
+				.showX {
+					opacity: 1;
+					filter: blur(0);
+					transform: translateX(0);
+				};
+
+				.hiddenY {
+					opacity: 0;
+					filter: blur(.5rem);
+					transform: translateY(100%);
+					transition: all 1s;
+				};
+
+				.showY {
+					opacity: 1;
+					filter: blur(0);
+					transform: translateY(0);
+				};
+
+				.delay100 {
+					transition-delay: 100ms;
+				};
+
+				.delay200 {
+					transition-delay: 200ms;
+				};
+
+				.delay300 {
+					transition-delay: 300ms;
+				};
+
+				.delay400 {
+					transition-delay: 400ms;
+				};
+
+				.delay500 {
+					transition-delay: 500ms;
+				};
+
+				.delay600 {
+					transition-delay: 600ms;
+				};
+
+				.delay700 {
+					transition-delay: 700ms;
+				};
+
+				.delay800 {
+					transition-delay: 800ms;
+				};
+
+				.delay900 {
+					transition-delay: 900ms;
+				};
+
+				@media(prefers-reduced-motion) {
+					.hiddenX {
+						transition: none;
+					};
+
+					.showX {
+						opacity: 1;
+					};
+
+					.hiddenY {
+						transition: none;
+					};
+
+					.showY {
+						opacity: 1;
+					};
+				};
+
 				*::-webkit-scrollbar {
 						width: 15px;
 						background-color: ${theme.colors.darkLight};

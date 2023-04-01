@@ -13,7 +13,7 @@ interface CustomLinkProps extends LinkProps {
 const CustomLink: FC<CustomLinkProps> = ({ scroll, to, children, href, ...props }): JSX.Element => {
   if (scroll && to) {
     return (
-      <LinkScroll {...props} href={href} activeClass="activeSection" offset={-90} to={to} spy smooth hashSpy={false} isdynamicduration={0} delay={0}>
+      <LinkScroll {...props} href={href} activeClass="activeSection" offset={-90} to={to} spy hashSpy={false}>
         {children}
       </LinkScroll>
     );

@@ -1,22 +1,23 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, ReactNode } from "react";
 import Head from "next/head";
 import muiTheme from "./muiTheme";
 import GlobalStyles from "./global";
 import darkTheme from "./darkTheme";
 import lightTheme from "./lightTheme";
 import { Theme } from "@emotion/react";
-import LoadingContent from "../components/LoadingContent";
 import { SnackbarProvider } from "notistack";
-import { CustomThemeContextProps } from "../interfaces";
+import { CustomThemeContextProps, ThemeOpts } from "../interfaces";
 import useCustomThemeContext from "../hooks/useCustomThemeContext";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 
 const ThemeProvider: FC<{
-  children: any,
+  children: ReactNode,
+  themeStore: ThemeOpts,
   [key: string]: any
-}> = ({ children, ...props }): JSX.Element => {
-  const { currentTheme }: CustomThemeContextProps = useCustomThemeContext();
+}> = ({ children, themeStore, ...props }): JSX.Element => {
+  let { currentTheme }: CustomThemeContextProps = useCustomThemeContext();
+  if (!currentTheme) currentTheme = themeStore;
   const emotionTheme: Theme = currentTheme === "light" ? lightTheme : darkTheme;
 
   return (
@@ -32,11 +33,7 @@ const ThemeProvider: FC<{
       <MuiThemeProvider theme={muiTheme}>
         <EmotionThemeProvider theme={emotionTheme}>
           <SnackbarProvider maxSnack={5} style={{ fontSize: "1.6rem" }}>
-            {
-              currentTheme
-                ? children
-                : <LoadingContent open={true} />
-            }
+            {children}
             <GlobalStyles />
           </SnackbarProvider>
         </EmotionThemeProvider>

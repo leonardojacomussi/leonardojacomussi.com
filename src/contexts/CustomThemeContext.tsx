@@ -12,21 +12,14 @@ export const CustomThemeProvider: FC<{ children: ReactNode }> = ({ children }) =
 
   const changeCurrentTheme = (newTheme: ThemeOpts): void => {
     setCurrentTheme(newTheme);
-    Cookies.set("currentTheme", newTheme);
+    Cookies.set("_leonardojacomussi.com_currentTheme", newTheme);
   };
 
   useEffect(() => {
-    let themeStore = Cookies.get("currentTheme");
-    if (!themeStore || typeof themeStore === "undefined" || !["dark", "light"].includes(themeStore)) {
-      themeStore = "dark";
-      Cookies.set("currentTheme", themeStore);
+    let themeStore = Cookies.get("_leonardojacomussi.com_currentTheme");
+    if (themeStore === "dark" || themeStore === "light") {
+      setCurrentTheme(themeStore);
     };
-
-    setCurrentTheme((themeStore && themeStore === "dark")
-      ? "dark"
-      : (themeStore && themeStore === "light")
-        ? "light" : "dark")
-
   }, []);
 
   return (
