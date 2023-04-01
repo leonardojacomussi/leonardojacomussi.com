@@ -6,18 +6,16 @@ import darkTheme from "./darkTheme";
 import lightTheme from "./lightTheme";
 import { Theme } from "@emotion/react";
 import { SnackbarProvider } from "notistack";
-import { CustomThemeContextProps, ThemeOpts } from "../interfaces";
+import { CustomThemeContextProps } from "../interfaces";
 import useCustomThemeContext from "../hooks/useCustomThemeContext";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 
 const ThemeProvider: FC<{
   children: ReactNode,
-  themeStore: ThemeOpts,
   [key: string]: any
-}> = ({ children, themeStore, ...props }): JSX.Element => {
+}> = ({ children }): JSX.Element => {
   let { currentTheme }: CustomThemeContextProps = useCustomThemeContext();
-  if (!currentTheme) currentTheme = themeStore;
   const emotionTheme: Theme = currentTheme === "light" ? lightTheme : darkTheme;
 
   return (

@@ -8,18 +8,25 @@ export const CustomThemeContext = createContext<CustomThemeContextProps>({
 });
 
 export const CustomThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<ThemeOpts>(null);
+  const [currentTheme, setCurrentTheme] = useState<any>(null);
 
   const changeCurrentTheme = (newTheme: ThemeOpts): void => {
     setCurrentTheme(newTheme);
-    Cookies.set("_leonardojacomussi.com_currentTheme", newTheme);
+    Cookies.set("currentTheme", newTheme);
   };
 
   useEffect(() => {
-    let themeStore = Cookies.get("_leonardojacomussi.com_currentTheme");
-    if (themeStore === "dark" || themeStore === "light") {
-      setCurrentTheme(themeStore);
+    let themeStore = Cookies.get("currentTheme");
+    if (!themeStore || typeof themeStore === "undefined" || !["dark", "light"].includes(themeStore)) {
+      themeStore = "dark";
+      Cookies.set("currentTheme", themeStore);
     };
+
+    setCurrentTheme((themeStore && themeStore === "dark")
+      ? "dark"
+      : (themeStore && themeStore === "light")
+        ? "light" : "dark")
+
   }, []);
 
   return (

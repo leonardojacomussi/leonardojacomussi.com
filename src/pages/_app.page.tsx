@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import { ThemeOpts } from "../interfaces";
 import TagManager from "react-gtm-module";
 import { ptBR, enUS } from "date-fns/locale";
 import { CacheProvider } from "@emotion/react";
@@ -19,12 +18,11 @@ import { CustomThemeProvider } from "../contexts/CustomThemeContext";
 const clientSideEmotionCache: EmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {
-  emotionCache: EmotionCache,
-  themeStore: ThemeOpts
+  emotionCache: EmotionCache
 };
 
 const App: FC<MyAppProps> = ({
-  Component, pageProps, emotionCache = clientSideEmotionCache, themeStore,...props
+  Component, pageProps, emotionCache = clientSideEmotionCache
 }): JSX.Element => {
   const router: NextRouter = useRouter();
   const [openLoadingContent, setOpenLoadingContent] = useState<boolean>(false);
@@ -65,7 +63,7 @@ const App: FC<MyAppProps> = ({
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
         <CustomThemeProvider>
-          <ThemeProvider themeStore={themeStore}>
+          <ThemeProvider>
             <Component {...pageProps} />
             <Analytics />
             <LoadingContent open={openLoadingContent} />

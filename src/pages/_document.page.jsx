@@ -1,5 +1,4 @@
 import * as React from "react";
-import Cookies from "js-cookie";
 import { ServerStyleSheets } from "@mui/styles";
 import createEmotionCache from "../utils/createEmotionCache";
 import createEmotionServer from "@emotion/server/create-instance";
@@ -43,18 +42,6 @@ MyDocument.getInitialProps = async (ctx) => {
 	// 3. app.render
 	// 4. page.render
 
-	let themeStore;
-	try {
-		themeStore = ctx.req.cookies["_leonardojacomussi.com_currentTheme"];
-	} catch (e) {
-		themeStore = "dark";
-	};
-	
-	if (!themeStore || typeof themeStore === "undefined" || !["dark", "light"].includes(themeStore)) {
-		themeStore = "dark";
-		Cookies.set("_leonardojacomussi.com_currentTheme", themeStore, { httpOnly: false } );
-	};
-
 	const sheets = new ServerStyleSheets();
 	const originalRenderPage = ctx.renderPage;
 
@@ -66,7 +53,7 @@ MyDocument.getInitialProps = async (ctx) => {
 	ctx.renderPage = () =>
 		originalRenderPage({
 			// eslint-disable-next-line
-			enhanceApp: (App) => (props) => sheets.collect(<App emotionCache={cache} themeStore={themeStore} {...props} />),
+			enhanceApp: (App) => (props) => sheets.collect(<App emotionCache={cache} {...props} />),
 			// enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
 		});
 
