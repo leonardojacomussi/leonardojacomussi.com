@@ -163,4 +163,13 @@ export const AwardItem = styled.div<HTMLAttributes<HTMLDivElement>>`
     line-height: 100%;
     color: ${({ theme }) => theme.colors.txt};
   };
+
+  a {
+    color: ${({ theme }) => theme.colors.yellow};
+    font-weight: normal;
+  };
+
+  a:hover {
+    text-decoration: underline;
+  }
 `;

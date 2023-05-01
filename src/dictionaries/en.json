@@ -31,18 +31,10 @@
   "home": {
     "main": {
       "hello": "Hey, I'm Leonardo",
-      "subtitle1": "Acoustical Engineer",
-      "subtitle2": "and",
-      "subtitle3": "Software Developer",
+      "subtitle": "Software Engineer",
       "description": "I love learning new things and am passionate about technology and creative solutions to solve real world problems.",
       "btnAboutMe": "About Me",
-      "btnPortifolio": "Portfolio",
-      "iLiveIn": "I live in",
-      "saoPaulo": "São Paulo",
-      "experience": "Experience",
-      "timeExperience": "$NUM years",
-      "age": "Age",
-      "myAge": "$NUM years old"
+      "btnPortifolio": "Portfolio"      
     },
     "services": {
       "title": "SERVICES",
@@ -52,7 +44,7 @@
       "backEnd": "Back-End",
       "backEndDescription": "Building RESTful API in TypeScript with Serverless Back-End and NoSQL database from AWS or GCP.",
       "UIDesign": "UI Design",
-      "UIDesignDescription": "Building wire frames, design systems, user journeys and digital prototypes with focus on user, design and navigability.",
+      "UIDesignDescription": "Building wire frames, design systems and digital prototypes with focus on user, design and navigability.",
       "IoTSolutions": "IoT Solutions",
       "IoTSolutionsDescription": "Consulting on cloud architecture for IoT systems: security and sensor authentication, two-way communication via MQTT protocol, BaaS (Back-end as a Service) realtime database and interactive dashboards for data monitoring.\nSoftware development for embedded Linux and realtime data processing in Python 3.",
       "acousticalEng": "Acoustical Engineering",
@@ -61,15 +53,12 @@
       "othersDescription": "Let me know more about your problem, I am open to new approaches to develop new solutions."
     },
     "about": {
-      "title": "I AM AN ACOUSTICAL ENGR. AND SOFTWARE DEVELOPER",
+      "title": "SOFTWARE ENGINEER",
       "subtitle": "About Me",
       "technology": "Technologies",
-      "description1": "I'm an Acoustical Engineer with strong knowledge in digital signal processing and data analysis.",
-      "description2": "I work as a Fullstack Web Software Developer and Python for Linux Embedded in IoT systems at the largest acoustics and environmental comfort consulting company in Brazil, Harmonia.",
+      "description1": "Software engineer with $NUM years of experience in full-stack web development and embedded software.",
+      "description2": "Graduated in Acoustical Engineering, with a solid foundation in logic and problem solving. In addition to professional courses, I am currently pursuing a degree in Computer Science.",
       "description3": "I love learning new things and am passionate about technology and creative solutions to solve real world problems.",
-      "github": "Github",
-      "linkedin": "LinkedIn",
-      "researchgate": "Research Gate",
       "nextjs": "Next JS",
       "reactjs": "React JS",
       "javascript": "Javascript",
@@ -81,7 +70,13 @@
       "prismic": "Prismic",
       "mui": "MUI Material",
       "nodejs": "Node JS",
-      "python": "Python"
+      "python": "Python",
+      "iLiveIn": "I live in",
+      "saoPaulo": "São Paulo",
+      "experience": "Experience",
+      "timeExperience": "$NUM years",
+      "age": "Age",
+      "myAge": "$NUM years old"
     },
     "qualifications": {
       "title": "QUALIFICATIONS",
@@ -93,10 +88,10 @@
           "local": "São Paulo, São Paulo, Brazil",
           "assignments": {
             "eng": {
-              "title": "Acoustical Engineer | Fullstack Developer",
+              "title": "Software Engineer",
               "period": "Full-time",
               "team": "Innovation Team",
-              "time": "Jan 2021 - present | $NUMYEAR years and $NUMMONTHS months"
+              "time": "Jan 2020 - present"
             },
             "intern": {
               "title": "Intern",
@@ -109,6 +104,29 @@
       },
       "education": {
         "title": "Education",
+        "ufsm": {
+          "title": "Federal University of Santa Maria",
+          "time": "2014 - 2020",
+          "local": "Santa Maria, Rio Grande do Sul, Brazil",
+          "course": "B.Sc in Acoustical Engineering",
+          "period": "Full-time"
+        },
+        "descomplica": {
+          "title": "Descomplica Digital Faculty",
+          "time": "2023 - 2030",
+          "local": "São Paulo, São Paulo, Brazil",
+          "course": "B.Sc in Computer Science",
+          "period": "Distance learning"
+        }       
+      },
+      "courses": {
+        "title": "Courses",
+        "meta_frontend": {
+          "title": "Meta",
+          "type": "Open courses",
+          "course": "Meta Front-End Developer Professional",
+          "time": "abr 2023 - present"
+        },
         "rocketseat": {
           "title": "Rocketseat",
           "type": "Open courses",
@@ -130,13 +148,6 @@
               "time": "mar 2021"
             }
           }
-        },
-        "ufsm": {
-          "title": "Federal University of Santa Maria",
-          "time": "2014 - 2020",
-          "local": "Santa Maria, Rio Grande do Sul, Brazil",
-          "course": "B.Sc in Acoustical Engineering",
-          "period": "Full-time"
         }
       }
     },
@@ -150,7 +161,8 @@
         "award": {
           "title": "Awarded Project",
           "award1": "Winner of the 8th edition of the Connected Smart Cities Award in the Pre-Operational Business category.",
-          "award2": "Elected the 2nd best startup in the 24th CBIC Awards for Innovation and Sustainability."
+          "award2": "Elected the 2nd best startup in the 24th CBIC Awards for Innovation and Sustainability.",
+          "callToAction": "Read more"
         },
         "learnMore": "Learn about the project"
       }
@@ -159,6 +171,7 @@
       "title": "CONTACT",
       "subtitle": "Let's create something together",
       "form": {
+        "title": "Fill The Form",
         "name": "Your Full Name",
         "email": "E-mail address",
         "message": "Your Message",
@@ -182,10 +195,12 @@
         "success": "Message sent successfully!",
         "unexpectedError": "Unexpected error, please try again later.",
         "codeError": "Error: code - (unknown error).",
-        "validName": "Please fill in a valid name.",
-        "validEmail": "Please fill in a valid email address.",
-        "validMessage": "Please fill in a valid message.",
-        "checkInfos": "Please check the information provided."
+        "nameIsRequired": "Name is required",
+        "emailIsRequired": "Email is required",
+        "emailIsInvalid": "Invalid email address",
+        "messageIsRequired": "Message is required",
+        "messageIsInvalid": "Very short message (minimum 25 characters)",
+        "checkInfos": "Please check the information provided"
       }
     }
   }

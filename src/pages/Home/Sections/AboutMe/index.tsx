@@ -1,22 +1,15 @@
 import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { differenceInYears } from "date-fns";
 import { useTheme, Theme } from "@emotion/react";
 /**Props */
 import AboutMeProps from "./AboutMeProps";
 /**Styles */
 import {
   Grid, AboutMeContainer, Title, Subtitle, TechTitle,
-  TechContent, TechItem, DescriptionContainer,
-  NetworkContainer, NetworkItem
+  TechContent, TechItem, DescriptionContainer, Infos
 } from "./styles";
 /**Files */
-import githubLight from "../../../../../public/assets/icons/githubLight.svg";
-import githubDark from "../../../../../public/assets/icons/githubDark.svg";
-import researchgateDark from "../../../../../public/assets/icons/researchgateDark.svg";
-import researchgateLight from "../../../../../public/assets/icons/researchgateLight.svg";
-import linkedinDark from "../../../../../public/assets/icons/linkedinDark.svg";
-import linkedinLight from "../../../../../public/assets/icons/linkedinLight.svg";
 import nextjsLight from "../../../../../public/assets/icons/nextjsLight.svg";
 import nextjsDark from "../../../../../public/assets/icons/nextjsDark.svg";
 import reactjs from "../../../../../public/assets/icons/reactjs.webp";
@@ -33,6 +26,12 @@ import python from "../../../../../public/assets/icons/python.webp";
 
 const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
   const theme: Theme = useTheme();
+  const dateOfBirth: Date = new Date("1996-09-27T00:00:00.000-03:00");
+  const startDateOfExperience = new Date("2020-01-01T00:00:00.000-03:00");
+  const today: Date = new Date();
+  const myAge: number = differenceInYears(today, dateOfBirth);
+  const myTimeOfExperience: number = differenceInYears(today, startDateOfExperience);
+
   return (
     <Grid id="about-me">
       <AboutMeContainer>
@@ -40,7 +39,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
         <Subtitle className="hiddenY">{t("home.about.subtitle")}</Subtitle>
         <DescriptionContainer>
           <p className="p1 hiddenX delay100">
-            {t("home.about.description1")}
+            {t("home.about.description1").replace("$NUM", String(myTimeOfExperience))}
           </p>
           <p className="p1 hiddenX delay100">
             {t("home.about.description2")}
@@ -48,47 +47,20 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
           <p className="p1 hiddenX delay100">
             {t("home.about.description3")}
           </p>
-          <NetworkContainer  className="hiddenX delay100">
-            <Link rel="external" href="https://github.com/leonardojacomussi" target="_blank">
-              <NetworkItem title={t("home.about.github")}>
-                <Image
-                  width={32}
-                  height={32}
-                  loading="lazy"
-                  alt={t("home.about.github")}
-                  title={t("home.about.github")}
-                  src={theme.theme === "dark" ? githubLight.src : githubDark.src}
-                />
-                <span>{t("home.about.github")}</span>
-              </NetworkItem>
-            </Link>
-            <Link rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
-              <NetworkItem title={t("home.about.linkedin")}>
-                <Image
-                  width={32}
-                  height={32}
-                  loading="lazy"
-                  alt={t("home.about.linkedin")}
-                  title={t("home.about.linkedin")}
-                  src={theme.theme === "dark" ? linkedinLight.src : linkedinDark.src}
-                />
-                <span>{t("home.about.linkedin")}</span>
-              </NetworkItem>
-            </Link>
-            <Link rel="external" href="https://www.researchgate.net/profile/Leonardo-Jacomussi" target="_blank">
-              <NetworkItem title={t("home.about.researchgate")}>
-                <Image
-                  width={32}
-                  height={32}
-                  loading="lazy"
-                  alt={t("home.about.researchgate")}
-                  title={t("home.about.researchgate")}
-                  src={theme.theme === "dark" ? researchgateLight.src : researchgateDark.src}
-                />
-                <span>{t("home.about.researchgate")}</span>
-              </NetworkItem>
-            </Link>
-          </NetworkContainer>
+          <Infos>
+          <div className="info-container hiddenX delay300">
+            <span className="info-title">{t("home.about.iLiveIn")}</span>
+            <h5 className="info-content">{t("home.about.saoPaulo")}</h5>
+          </div>
+          <div className="info-container hiddenX delay200">
+            <span className="info-title">{t("home.about.experience")}</span>
+            <h5 className="info-content">{t("home.about.timeExperience").replace("$NUM", String(myTimeOfExperience))}</h5>
+          </div>
+          <div className="info-container hiddenX delay100">
+            <span className="info-title">{t("home.about.age")}</span>
+            <h5 className="info-content">{t("home.about.myAge").replace("$NUM", String(myAge))}</h5>
+          </div>
+        </Infos>
         </DescriptionContainer>
         <TechTitle  className="hiddenY">{t("home.about.technology")}</TechTitle>
         <TechContent>

@@ -41,18 +41,26 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
           </OtohMockup2>
           <AwardContainer>
             <h6 className="hiddenX delay100">{t("home.portfolio.otoh.award.title")}</h6>
-            <Link rel="external" className="hiddenX delay100" href="https://premio.connectedsmartcities.com.br/o-que-e-o-premio-csc/#conteudo|1" target="_blank">
-              <AwardItem>
-                🥇
-                <p className="p1">{t("home.portfolio.otoh.award.award1")}</p>
-              </AwardItem>
-            </Link>
-            <Link rel="external" className="hiddenX delay100" href="https://www.cbic.org.br/premioinovacaoesustentabilidade/edicao-anterior-2022/" target="_blank">
-              <AwardItem>
-                🥈
-                <p className="p1">{t("home.portfolio.otoh.award.award2")}</p>
-              </AwardItem>
-            </Link>
+            <AwardItem className="hiddenX delay100">
+              🥇
+              <p className="p1">
+                {t("home.portfolio.otoh.award.award1")}
+                <br />
+                <Link rel="external" href="https://evento.connectedsmartcities.com.br/o-que-e-o-premio-csc/#:~:text=O%20Pr%C3%AAmio%20aceita%20a%20participa%C3%A7%C3%A3o,maneira%20a%20torn%C3%A1%2Dlas%20inteligentes." target="_blank">
+                  {t("home.portfolio.otoh.award.callToAction")}
+                </Link>
+              </p>
+            </AwardItem>
+            <AwardItem className="hiddenX delay100">
+              🥈
+              <p className="p1">
+                {t("home.portfolio.otoh.award.award2")}
+                <br />
+                <Link rel="external" className="hiddenX delay100" href="https://www.cbic.org.br/premioinovacaoesustentabilidade/edicao-anterior-2022/" target="_blank">
+                  {t("home.portfolio.otoh.award.callToAction")}
+                </Link>
+              </p>
+            </AwardItem>
           </AwardContainer>
           <Link rel="external" className="hiddenX delay100" href={`https://www.otoh.com.br/${router.locale}`} target="_blank">
             <Button>

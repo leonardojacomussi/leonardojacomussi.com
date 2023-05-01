@@ -24,6 +24,7 @@ export const Grid = styled.div<HTMLAttributes<HTMLElement>>`
 export const MainContainer = styled.main<HTMLAttributes<HTMLElement>>`
   grid-area: main-container;
   width: 100%;
+  min-height: calc(100vh - 20rem);
   height: 100%;
   row-gap: 4rem;
   display: grid;
@@ -32,9 +33,9 @@ export const MainContainer = styled.main<HTMLAttributes<HTMLElement>>`
   grid-template-areas:
     "hello-area hello-area img-area"
     "subtitle-area subtitle-area img-area"
-    "description-area description-area description-area"
-    "calltoaction-area calltoaction-area calltoaction-area"
-    "infos-area infos-area infos-area";
+    "description-area description-area img-area"
+    "calltoaction-area calltoaction-area img-area"
+    "network-area network-area network-area";
   
   @media(max-width: 987px) {
     height: 100%;
@@ -46,14 +47,14 @@ export const MainContainer = styled.main<HTMLAttributes<HTMLElement>>`
       "subtitle-area subtitle-area subtitle-area"
       "description-area description-area description-area"
       "calltoaction-area calltoaction-area calltoaction-area"
-      "infos-area infos-area infos-area";
+      "network-area network-area network-area";
   };
 `;
 
 export const Hello = styled.h1<HTMLAttributes<HTMLHeadingElement>>`
   grid-area: hello-area;
   width: 100%;
-  height: auto;
+  height: fit-content;
   /* margin: 2rem 0; */
 
   @media (max-width: 340px) {    
@@ -76,43 +77,39 @@ export const Hello = styled.h1<HTMLAttributes<HTMLHeadingElement>>`
   };
 `;
 
-export const Subtitle = styled.div<HTMLAttributes<HTMLDivElement>>`
+export const Subtitle = styled.h3<HTMLAttributes<HTMLHeadingElement>>`
   grid-area: subtitle-area;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  white-space: nowrap;
+  align-self: flex-end;
+  z-index: 2;
 
-  h3 {
-    white-space: nowrap;
+  width: fit-content;
+  height: fit-content;
+  display: inline-flex;
+  color: ${({ theme }) => theme.colors.purple};
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation:
+    typing 3.5s steps(40, end) infinite,
+    blink-caret .75s step-end infinite;
+
+  &.pt {
+    font-size: 4rem;
   };
 
-  .typer {
-    width: fit-content;
-    display: inline-flex;
-    color: ${({ theme }) => theme.colors.purple};
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    animation:
-      typing 3.5s steps(40, end) infinite,
-      blink-caret .75s step-end infinite;
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  };
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    };
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      100% { border-color: orange; }
-    };
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    100% { border-color: orange; }
   };
 
   @media (max-width: 415px) {    
-    .pt {
+    &.pt {
       font-size: 1.8rem !important;
       white-space: pre;
       display: block;
@@ -120,15 +117,8 @@ export const Subtitle = styled.div<HTMLAttributes<HTMLDivElement>>`
     };
   };
 
-  @media (max-width: 460px) {    
-    .en .typer {
-      font-size: 2rem !important;
-      max-width: 24rem;
-    };
-  };
-
   @media(max-width: 750px) {
-    h3 {
+    &.pt, &.en {
       font-size: 3.3rem;
       font-weight: 600;
       line-height: 100%;
@@ -137,7 +127,7 @@ export const Subtitle = styled.div<HTMLAttributes<HTMLDivElement>>`
   };
 
   @media(max-width: 530px) {
-    h3 {
+    &.pt, &.en {
       font-size: 2.3rem;
       font-weight: 600;
       line-height: 100%;
@@ -153,6 +143,7 @@ export const Me = styled.div<HTMLAttributes<HTMLDivElement>>`
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
+  padding-left: 3rem;
 
   > div {
     position: unset !important;
@@ -172,6 +163,7 @@ export const Me = styled.div<HTMLAttributes<HTMLDivElement>>`
     height: auto;
     justify-content: center;
     align-items: center;
+    padding-left: 0;
 
     > div {
       position: relative !important;
@@ -213,38 +205,67 @@ export const CallToAction = styled.div<HTMLAttributes<HTMLDivElement>>`
     color: ${({ theme }) => theme.colors.black};
     background-color: ${({ theme }) => theme.colors.yellow};
   };
+
+  a:hover {
+    text-decoration: underline;
+  };
 `;
 
-export const Infos = styled.div<HTMLAttributes<HTMLDivElement>>`
-  grid-area: infos-area;
-  width: 100%;
+export const NetworkContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
+  grid-area: network-area;
+  width: fit-content;
   height: auto;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
-  column-gap: 4.5rem;
-  color: ${({ theme }) => theme.colors.txt};
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 4rem;
 
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  :hover {
+    .isNotHovered {
+      opacity: .5;
+    }
+  }
 
-    .info-title {
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: 1.25%;
-    };
+  @media (max-width: 610px) {
+    gap: 6.5rem;
+  };
+`;
 
-    .info-content {
+export const NetworkItem = styled.div<HTMLAttributes<HTMLDivElement>>`
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  transition: opacity .3s ease-in-out;
 
-    };
+  img {
+    width: 3.2rem !important;
+    height: auto !important;
   };
 
-  @media(max-width: 530px) {
-    flex-direction: column;
-    row-gap: 4rem;
+  span {
+    font-family: "Syne", sans-serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 100%;
+    color: ${({ theme }) => theme.colors.txt};
+  };
+
+  &.isHovered {
+    color: ${({ theme }) => theme.colors.txt};
+    span {
+      text-decoration: underline;
+    }
+  };
+
+  @media (max-width: 610px) {
+    span {
+      display: none;
+    };
   };
 `;

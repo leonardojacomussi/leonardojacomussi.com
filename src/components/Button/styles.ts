@@ -9,10 +9,12 @@ export const Btn = styled.button<HTMLAttributes<HTMLButtonElement>>`
   background-color: ${({ theme }) => theme.colors.purple};
   color: ${({ theme }) => theme.colors.white};
   border: none;
+  transition: transform .3s ease-in-out;
 
   &:hover {
 		cursor: pointer;
 		box-shadow: ${({ theme }) => `0px 3px 3px ${theme.colors.darkLight}`};
+    transform: scale(1.05);
 	};
 
   &:active {

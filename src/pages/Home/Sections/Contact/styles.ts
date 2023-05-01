@@ -26,7 +26,7 @@ export const ContactContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
   grid-template-areas:
     "title-area ."
     "subtitle-area ."
-    "map-area form-area";
+    "social-media form-area";
   
   @media(max-width: 900px) {
     column-gap: 0px;
@@ -35,8 +35,8 @@ export const ContactContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
     grid-template-areas:
       "title-area"
       "subtitle-area"
-      "form-area"
-      "map-area";
+      "social-media"
+      "form-area";
   };
 `;
 
@@ -76,6 +76,10 @@ export const Form = styled.form<HTMLAttributes<HTMLFormElement>>`
   align-items: stretch;
   row-gap: 2rem;
 
+  h4 {
+    margin-bottom: 2rem;
+  }
+
   label {
     width: 100%;
     font-family: "Poppins", sans-serif;
@@ -89,6 +93,12 @@ export const Form = styled.form<HTMLAttributes<HTMLFormElement>>`
       margin-top: 3rem;
     };
   };
+
+  label::before {
+    content: "*";
+    color: red;
+    margin-right: 0.5rem;
+  }
   
   button {
     margin-top: 3rem;
@@ -127,21 +137,86 @@ export const Form = styled.form<HTMLAttributes<HTMLFormElement>>`
       -webkit-text-fill-color: ${({ theme }) => theme.theme === "dark" ? theme.colors.paleBlue : theme.colors.black};
     };
   };
+
+  @media(max-width: 900px) {
+    margin-top: 3rem;
+  };
 `;
 
-export const MapContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
-  grid-area: map-area;
+export const FormErrorMessage = styled.span<HTMLAttributes<HTMLSpanElement>>`
+  width: 100%;
+  height: auto;
+  color: red;
+  font-size: 1.4rem;
+`;
+
+export const SocialMedia = styled.div<HTMLAttributes<HTMLDivElement>>`
+  grid-area: social-media;
+  width: fit-content;
+  height: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 5rem;
+
+  :hover {
+    .isNotHovered {
+      opacity: .5;
+    };
+  };
+`;
+
+export const SocialMediaItem = styled.div<HTMLAttributes<HTMLDivElement>>`
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "icon-area title-area"
+    "icon-area link-area";
+  column-gap: 1.3rem;
+  row-gap: .5rem;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  min-height: 35rem;
-  border-radius: ${({ theme }) => theme.borders.borderRadius};
-  overflow: hidden;
-  border: none;
+  color: ${({ theme }) => theme.colors.txt};
+  transition: opacity .3s ease-in-out;
 
-  .gm-style {
-		border-radius: ${({ theme }) => theme.borders.borderRadius};
-	};
+  div {
+    grid-area: icon-area;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: ${({ theme }) => theme.borders.borderRadius};
+    background-color: ${({ theme }) => theme.colors.techBg};
+    filter: ${({ theme }) => theme.effects.filter};
+
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+    };
+  };
+
+  p {
+    grid-area: title-area;
+    width: 100%;
+    height: auto;
+  };
+
+  a {
+    grid-area: link-area;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+  };
+
+  &.isHovered {
+    color: ${({ theme }) => theme.colors.txt};
+    a {
+      text-decoration: underline;
+    };
+  };
 `;

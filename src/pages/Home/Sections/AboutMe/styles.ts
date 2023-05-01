@@ -129,36 +129,36 @@ export const DescriptionContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
   row-gap: 4rem;
 `;
 
-export const NetworkContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
+export const Infos = styled.div<HTMLAttributes<HTMLDivElement>>`
+  /* grid-area: infos-area; */
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  row-gap: 2rem;
-`;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 4.5rem;
+  color: ${({ theme }) => theme.colors.txt};
 
-export const NetworkItem = styled.div<HTMLAttributes<HTMLDivElement>>`
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-  img {
-    width: 3.2rem !important;
-    height: auto !important;
+    .info-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 1.25%;
+    };
+
+    .info-content {
+
+    };
   };
 
-  span {
-    font-family: "Syne", sans-serif;
-    font-size: 1.9rem;
-    font-weight: 600;
-    line-height: 100%;
-    color: ${({ theme }) => theme.colors.txt};
+  @media(max-width: 530px) {
+    flex-direction: column;
+    row-gap: 4rem;
   };
 `;

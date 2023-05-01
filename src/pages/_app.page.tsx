@@ -6,7 +6,6 @@ import { ptBR, enUS } from "date-fns/locale";
 import { CacheProvider } from "@emotion/react";
 import { EmotionCache } from "@emotion/cache";
 import ThemeProvider from "../styles/ThemeProvider";
-import { Analytics } from "@vercel/analytics/react";
 import { useRouter, NextRouter } from "next/router";
 import LoadingContent from "../components/LoadingContent";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -65,7 +64,6 @@ const App: FC<MyAppProps> = ({
         <CustomThemeProvider>
           <ThemeProvider>
             <Component {...pageProps} />
-            <Analytics />
             <LoadingContent open={openLoadingContent} />
           </ThemeProvider>
         </CustomThemeProvider>

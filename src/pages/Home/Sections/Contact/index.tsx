@@ -1,67 +1,174 @@
-import { FC, useRef, useEffect, useState } from "react";
+import { FC, useState } from "react";
+import * as Yup from "yup";
+import { useFormik } from "formik";
 import { useTheme, Theme } from "@emotion/react";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter, NextRouter } from "next/router";
 import Button from "../../../../components/Button";
 import { VariantType, useSnackbar } from "notistack";
 /**Props */
-import ContactProps from "./ContactProps";
+import ContactProps, { SocialMediaProps } from "./ContactProps";
 /**Styles */
 import {
   Grid, ContactContainer, Title, Subtitle,
-  Form, MapContainer
+  Form, FormErrorMessage, SocialMedia, SocialMediaItem
 } from "./styles";
 /**Helpers */
-import { setMapMarkers, contactSender } from "./helpers";
+import { contactSender } from "./helpers";
+/**Files */
+import emailDark from "../../../../../public/assets/icons/emailDark.svg";
+import emailLight from "../../../../../public/assets/icons/emailLight.svg";
+import githubLight from "../../../../../public/assets/icons/githubLight.svg";
+import githubDark from "../../../../../public/assets/icons/githubDark.svg";
+import researchgateDark from "../../../../../public/assets/icons/researchgateDark.svg";
+import researchgateLight from "../../../../../public/assets/icons/researchgateLight.svg";
+import linkedinDark from "../../../../../public/assets/icons/linkedinDark.svg";
+import linkedinLight from "../../../../../public/assets/icons/linkedinLight.svg";
 
 const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element => {
+  const [hover, setHover] = useState<SocialMediaProps>({ email: false, github: false, linkedin: false, researchgate: false });
   const router: NextRouter = useRouter();
   const theme: Theme = useTheme();
-  const divMap = useRef<HTMLDivElement | null>(null);
-  const [contactName, setContactName] = useState<string>("");
-  const [contactEmail, setContactEmail] = useState<string>("");
-  const [contactMessage, setContactMessage] = useState<string>("");
   const { enqueueSnackbar } = useSnackbar();
+
+  const formik = useFormik({
+    initialValues: {
+      contactName: "",
+      contactEmail: "",
+      contactMessage: "",
+    },
+    onSubmit: (values) => {
+      setOpenLoadingContent(true);
+      contactSender(t, router.locale, values, openSnackbar)
+        .then((res) => res && formik.resetForm())
+        .finally(() => setOpenLoadingContent(false));
+    },
+    validationSchema: Yup.object({
+      contactName: Yup.string().required(t("emails.contact.feedback.nameIsRequired")),
+      contactEmail: Yup.string().email(t("emails.contact.feedback.emailIsInvalid")).required(t("emails.contact.feedback.emailIsRequired")),
+      contactMessage: Yup.string().required(t("emails.contact.feedback.messageIsRequired")).min(25, t("emails.contact.feedback.messageIsInvalid")),
+    }),
+  });
 
   const openSnackbar = (message: string, variant: VariantType) => {
     // variant could be success, error, warning, info, or default
     enqueueSnackbar(message, { variant });
   };
 
-  // openSnackbar("Mensagem enviada com sucesso!", "info")
-  // openSnackbar("Mensagem enviada com sucesso!", "success")
-  // openSnackbar("Mensagem enviada com sucesso!", "error")
-  // openSnackbar("Mensagem enviada com sucesso!", "warning")
-  // openSnackbar("Mensagem enviada com sucesso!", "default")
-
-  useEffect(() => {
-    if (divMap.current) {
-      setMapMarkers(divMap, theme.theme);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [divMap.current, theme]);
-
   return (
     <Grid id="contact">
       <ContactContainer>
         <Title className="st1">{t("home.contact.title")}</Title>
         <Subtitle className="hiddenY">{t("home.contact.subtitle")}</Subtitle>
-        <MapContainer className="hiddenX delay100" ref={divMap} />
-        <Form
-          onSubmit={(event) => {
-            contactSender(
-              event, t, router.locale, contactName, contactEmail, contactMessage,
-              setContactName, setContactEmail, setContactMessage,
-              setOpenLoadingContent, openSnackbar
-            );
-          }}
-        >
-          <label className="hiddenX delay100" htmlFor="name">{t("home.contact.form.name")}</label>
-          <input className="hiddenX delay100" required type="text" name="name" id="name" value={contactName} onChange={(e) => setContactName(e.target.value)} />
-          <label className="hiddenX delay100" htmlFor="email">{t("home.contact.form.email")}</label>
-          <input className="hiddenX delay100" required type="email" name="email" id="email" value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} />
-          <label className="hiddenX delay100" htmlFor="message">{t("home.contact.form.message")}</label>
-          <textarea className="hiddenX delay100" required name="message" id="message" cols={30} rows={4} value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} />
-          <Button className="hiddenX delay100" type="submit">
+        <SocialMedia>
+          <div className="hiddenX delay200">
+            <SocialMediaItem
+              onMouseEnter={() => setHover(prveHover => ({ ...prveHover, email: true }))}
+              onMouseLeave={() => setHover(prveHover => ({ ...prveHover, email: false }))}
+              className={hover.email ? "isHovered" : hover.researchgate || hover.github || hover.linkedin ? "isNotHovered" : ""}
+            >
+              <div>
+                <Image
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  alt="Email"
+                  title="Email"
+                  src={theme.theme === "dark" ? emailLight.src : emailDark.src} />
+              </div>
+              <p className="p2">Email</p>
+              <Link rel="external" href="mailto:dev@leonardojacomussi.com" target="_blank">
+                dev@leonardojacomussi.com
+              </Link>
+            </SocialMediaItem>
+          </div>
+          <div className="hiddenX delay200">
+            <SocialMediaItem
+              onMouseEnter={() => setHover(prveHover => ({ ...prveHover, linkedin: true }))}
+              onMouseLeave={() => setHover(prveHover => ({ ...prveHover, linkedin: false }))}
+              className={hover.linkedin ? "isHovered" : hover.researchgate || hover.github || hover.email ? "isNotHovered" : ""}
+            >
+              <div>
+                <Image
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  alt="LinkedIn"
+                  title="LinkedIn"
+                  src={theme.theme === "dark" ? linkedinLight.src : linkedinDark.src} />
+              </div>
+              <p className="p2">LinkedIn</p>
+              <Link rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
+                linkedin.com/in/leonardo-jacomussi/
+              </Link>
+            </SocialMediaItem>
+          </div>
+          <div className="hiddenX delay200">
+            <SocialMediaItem
+              onMouseEnter={() => setHover(prveHover => ({ ...prveHover, github: true }))}
+              onMouseLeave={() => setHover(prveHover => ({ ...prveHover, github: false }))}
+              className={hover.github ? "isHovered" : hover.researchgate || hover.linkedin || hover.email ? "isNotHovered" : ""}
+            >
+              <div>
+                <Image
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  alt="GitHub"
+                  title="GitHub"
+                  src={theme.theme === "dark" ? githubLight.src : githubDark.src} />
+              </div>
+              <p className="p2">GitHub</p>
+              <Link rel="external" href="https://github.com/leonardojacomussi" target="_blank">
+                github.com/leonardojacomussi
+              </Link>
+            </SocialMediaItem>
+          </div>
+          <div className="hiddenX delay200">
+            <SocialMediaItem
+              onMouseEnter={() => setHover(prveHover => ({ ...prveHover, researchgate: true }))}
+              onMouseLeave={() => setHover(prveHover => ({ ...prveHover, researchgate: false }))}
+              className={hover.researchgate ? "isHovered" : hover.github || hover.linkedin || hover.email ? "isNotHovered" : ""}
+            >
+              <div>
+                <Image
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  alt="ResearchGate"
+                  title="ResearchGate"
+                  src={theme.theme === "dark" ? researchgateLight.src : researchgateDark.src} />
+              </div>
+              <p className="p2">ResearchGate</p>
+              <Link rel="external" href="https://www.researchgate.net/profile/Leonardo-Jacomussi" target="_blank">
+                researchgate.net/profile/Leonardo-Jacomussi
+              </Link>
+            </SocialMediaItem>
+          </div>
+        </SocialMedia>
+        <Form onSubmit={formik.handleSubmit} noValidate={false}>
+          <h4 className="hiddenY delay200">{t("home.contact.form.title")}</h4>
+
+          <label className="hiddenX delay200" htmlFor="contactName">{t("home.contact.form.name")}</label>
+          <input className="hiddenX delay200" name="contactName" id="contactName" {...formik.getFieldProps("contactName")} />
+          <FormErrorMessage>
+            {formik.touched.contactName && formik.errors.contactName}
+          </FormErrorMessage>
+
+          <label className="hiddenX delay200" htmlFor="contactEmail">{t("home.contact.form.email")}</label>
+          <input className="hiddenX delay200" name="contactEmail" id="contactEmail" {...formik.getFieldProps("contactEmail")} />
+          <FormErrorMessage>
+            {formik.touched.contactEmail && formik.errors.contactEmail}
+          </FormErrorMessage>
+
+          <label className="hiddenX delay200" htmlFor="contactMessage">{t("home.contact.form.message")}</label>
+          <textarea className="hiddenX delay200" name="contactMessage" id="contactMessage" cols={30} rows={4} {...formik.getFieldProps("contactMessage")} />
+          <FormErrorMessage>
+            {formik.touched.contactMessage && formik.errors.contactMessage}
+          </FormErrorMessage>
+
+          <Button className="hiddenX delay200" type="submit">
             {t("home.contact.form.bntSubmit")}
           </Button>
         </Form>

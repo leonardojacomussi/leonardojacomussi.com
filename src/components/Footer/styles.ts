@@ -18,7 +18,7 @@ export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
   grid-area: footer-container;
   width: 100%;
   height: auto;
-  min-height: 9rem;
+  min-height: 18rem;
   color: ${({ theme }) => theme.colors.txt};
   display: grid;
   grid-template-columns: auto;
@@ -51,11 +51,29 @@ export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
     height: auto;
     column-gap: 3rem;
     justify-self: center;
+
+    a {
+      transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+    };
+
+    :hover {
+      .isHovered {
+        transform: scale(1.1);
+      };
+
+      .isNotHovered {
+        opacity: .5;
+      };
+    };
   };
 
   .a {
     grid-area: coffee-area;
   };
+
+  .a:hover {
+    text-decoration: underline;
+  }
 
   @media(min-width: 750px) {
     grid-template-rows: auto;

@@ -136,7 +136,7 @@ In the root folder of the project, create a `/.env.local` file with the followin
 
 ```
 NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG=******
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=******
+NEXT_PUBLIC_PERSONAL_EMAIL=******
 NEXT_PUBLIC_SENDGRID_API_KEY=******
 ```
 

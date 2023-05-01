@@ -37,7 +37,7 @@ const sendContactEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 			html: string
 		} = {
 			to: [
-				"leonardojacomussi@gmail.com",
+				process.env.NEXT_PUBLIC_PERSONAL_EMAIL,
 			],
 			from: `Leonardo Jacomussi <dev@leonardojacomussi.com>`,
 			subject: "Contato - Site",

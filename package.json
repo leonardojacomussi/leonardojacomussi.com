@@ -23,11 +23,11 @@
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@vercel/analytics": "^0.1.11",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^2.0.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "formik": "^2.2.9",
     "js-cookie": "^3.0.1",
     "next": "13.1.6",
     "notistack": "^2.0.8",
@@ -37,7 +37,8 @@
     "react-scroll": "^1.8.9",
     "sharp": "^0.31.3",
     "tss-react": "^4.6.1",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/google.maps": "^3.52.0",

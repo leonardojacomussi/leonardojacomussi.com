@@ -4,7 +4,7 @@ export const setAnimations = () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("showX");
       } else {
-        entry.target.classList.remove("showX");
+        // entry.target.classList.remove("showX");
       };
     })
   });
@@ -14,7 +14,7 @@ export const setAnimations = () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("showY");
       } else {
-        entry.target.classList.remove("showY");
+        // entry.target.classList.remove("showY");
       };
     })
   });
