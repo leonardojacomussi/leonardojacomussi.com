@@ -11,7 +11,7 @@ export const Grid = styled.div<HTMLAttributes<HTMLElement>>`
   grid-template-areas:
     ". footer-container .";
   box-sizing: border-box;
-  margin-bottom: -8rem;
+  /* margin-bottom: -8rem; */
 `;
 
 export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
@@ -84,11 +84,11 @@ export const FooterContainer = styled.footer<HTMLAttributes<HTMLElement>>`
     p {
       text-align: left;
     };
-    
+
     div {
       justify-self: center;
     };
-    
+
     .a {
       text-align: right;
     };

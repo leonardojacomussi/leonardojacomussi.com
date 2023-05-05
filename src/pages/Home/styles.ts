@@ -16,4 +16,8 @@ export const Container = styled.div<HTMLAttributes<HTMLDivElement>>`
     "contact-area"
     "footer-area";
   row-gap: 8rem;
+
+  footer {
+    margin-bottom: -8rem;
+  };
 `;

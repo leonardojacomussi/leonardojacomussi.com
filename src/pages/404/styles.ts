@@ -9,16 +9,12 @@ export const Container = styled.div<ContainerProps>`
   max-height: 100vh;
   display: grid;
   grid-template-columns: .28fr 3fr .28fr;
-  grid-template-rows: calc(100% - 9rem) auto;
+  grid-template-rows: calc(100% - 18rem) auto;
   grid-template-areas:
     ". content-area ."
     "footer-area footer-area footer-area";
   color: ${({ theme }) => theme.colors.txt};
   background-color: ${({ theme }) => theme.colors.bg};
-
-  @media (max-width: 750px) {
-    grid-template-rows: calc(100% - 13.6rem) auto;
-  };
 `;
 
 export const Content = styled.div<HTMLAttributes<HTMLDivElement>>`
