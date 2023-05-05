@@ -20,12 +20,15 @@ import { setAnimations } from "./Home/helpers";
 /**Props */
 import HomeProps, { HomeStaticProps } from "./Home/HomeProps";
 
+import previewImg from "../public/docs/preview.png";
+
 const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
   const t: Translator = getTranslator(dictionary);
   const [openLoadingContent, setOpenLoadingContent] = useState<boolean>(false);
 
   useEffect(() => {
     setAnimations();
+    console.log("previewImg", previewImg.src);
   }, []);
 
   return (

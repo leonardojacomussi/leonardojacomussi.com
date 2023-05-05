@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Hi, welcome to my personal page! My name is Leonardo Jacomussi and I am an Acoustical Engineer, IoT and Web Developer Fullstack."
+    "description": "Hi, welcome to my personal page! My name is Leonardo Jacomussi and I am a Software Engineer."
   },
   "backToTop": "Back to the top",
   "header": {
@@ -34,7 +34,7 @@
       "subtitle": "Software Engineer",
       "description": "I love learning new things and am passionate about technology and creative solutions to solve real world problems.",
       "btnAboutMe": "About Me",
-      "btnPortifolio": "Portfolio"      
+      "btnPortifolio": "Portfolio"
     },
     "services": {
       "title": "SERVICES",
@@ -117,7 +117,7 @@
           "local": "São Paulo, São Paulo, Brazil",
           "course": "B.Sc in Computer Science",
           "period": "Distance learning"
-        }       
+        }
       },
       "courses": {
         "title": "Courses",

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Olá, bem-vindo à minha página pessoal! Me chamo Leonardo Jacomussi e sou Engenheiro Acústico, Desenvolvedor IoT e Web Fullstack."
+    "description": "Olá, bem-vindo à minha página pessoal! Me chamo Leonardo Jacomussi e sou Engenheiro de Software."
   },
   "backToTop": "Voltar para o topo",
   "header": {
@@ -117,7 +117,7 @@
           "local": "São Paulo, São Paulo, Brasil",
           "course": "Graduação, Ciência da Computação",
           "period": "EaD"
-        }        
+        }
       },
       "courses": {
         "title": "Cursos",
