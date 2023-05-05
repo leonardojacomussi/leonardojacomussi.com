@@ -54,7 +54,7 @@ const Main: FC<MainProps> = ({ t, ...props }): JSX.Element => {
           </Link>
         </CallToAction>
 
-        <NetworkContainer className="hiddenX delay100">
+        <NetworkContainer className="no-js-hiddenX delay100">
           <Link rel="external" href="https://github.com/leonardojacomussi" target="_blank">
             <NetworkItem title="GitHub"
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, github: true }))}

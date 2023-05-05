@@ -36,8 +36,8 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
       <QualificationsContainer>
         <LeftSide>
           <Title className="st1">{t("home.qualifications.title")}</Title>
-          <Subtitle className="hiddenY">{t("home.qualifications.subtitle")}</Subtitle>
-          <Experience className="hiddenX">
+          <Subtitle className="no-js-hiddenY">{t("home.qualifications.subtitle")}</Subtitle>
+          <Experience className="no-js-hiddenX">
             <HarmoniaTitle>
               <h5>{t("home.qualifications.work.harmonia.title")}</h5>
               <div>
@@ -78,8 +78,8 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               </p>
             </CurrentAssignment>
           </Experience>
-          <EducationTitle className="hiddenY delay100">{t("home.qualifications.education.title")}</EducationTitle>
-          <Education className="hiddenX delay100">
+          <EducationTitle className="no-js-hiddenY delay100">{t("home.qualifications.education.title")}</EducationTitle>
+          <Education className="no-js-hiddenX delay100">
             <Descomplica>
               <DescomplicaLogo>
                 <Image
@@ -127,7 +127,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               </UFSMContent>
             </UFSM>
           </Education>
-          <DownloadCV className="hiddenX download-cv-left">
+          <DownloadCV className="no-js-hiddenX download-cv-left">
             <Button onClick={downloadCV}>
               Download CV
             </Button>
@@ -136,8 +136,8 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
 
         <RightSide>
 
-          <CoursesTitle className="hiddenY delay100">{t("home.qualifications.courses.title")}</CoursesTitle>
-          <Courses className="hiddenX delay100">
+          <CoursesTitle className="no-js-hiddenY delay100">{t("home.qualifications.courses.title")}</CoursesTitle>
+          <Courses className="no-js-hiddenX delay100">
             <Meta>
               <MetaLogo>
                 <Image
@@ -213,7 +213,7 @@ const Qualifications: FC<QualificationsProps> = ({ t }): JSX.Element => {
               </ModernWeb>
             </Udemy>
           </Courses>
-          <DownloadCV className="hiddenX download-cv-right">
+          <DownloadCV className="no-js-hiddenX download-cv-right">
             <Button onClick={downloadCV}>
               Download CV
             </Button>

@@ -60,9 +60,9 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
     <Grid id="contact">
       <ContactContainer>
         <Title className="st1">{t("home.contact.title")}</Title>
-        <Subtitle className="hiddenY">{t("home.contact.subtitle")}</Subtitle>
+        <Subtitle className="no-js-hiddenY">{t("home.contact.subtitle")}</Subtitle>
         <SocialMedia>
-          <div className="hiddenX delay200">
+          <div className="no-js-hiddenX delay200">
             <SocialMediaItem
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, email: true }))}
               onMouseLeave={() => setHover(prveHover => ({ ...prveHover, email: false }))}
@@ -83,7 +83,7 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
               </Link>
             </SocialMediaItem>
           </div>
-          <div className="hiddenX delay200">
+          <div className="no-js-hiddenX delay200">
             <SocialMediaItem
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, linkedin: true }))}
               onMouseLeave={() => setHover(prveHover => ({ ...prveHover, linkedin: false }))}
@@ -104,7 +104,7 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
               </Link>
             </SocialMediaItem>
           </div>
-          <div className="hiddenX delay200">
+          <div className="no-js-hiddenX delay200">
             <SocialMediaItem
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, github: true }))}
               onMouseLeave={() => setHover(prveHover => ({ ...prveHover, github: false }))}
@@ -125,7 +125,7 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
               </Link>
             </SocialMediaItem>
           </div>
-          <div className="hiddenX delay200">
+          <div className="no-js-hiddenX delay200">
             <SocialMediaItem
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, researchgate: true }))}
               onMouseLeave={() => setHover(prveHover => ({ ...prveHover, researchgate: false }))}
@@ -148,27 +148,27 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
           </div>
         </SocialMedia>
         <Form onSubmit={formik.handleSubmit} noValidate={false}>
-          <h4 className="hiddenY delay200">{t("home.contact.form.title")}</h4>
+          <h4 className="no-js-hiddenY delay200">{t("home.contact.form.title")}</h4>
 
-          <label className="hiddenX delay200" htmlFor="contactName">{t("home.contact.form.name")}</label>
-          <input className="hiddenX delay200" name="contactName" id="contactName" {...formik.getFieldProps("contactName")} />
+          <label className="no-js-hiddenX delay200" htmlFor="contactName">{t("home.contact.form.name")}</label>
+          <input className="no-js-hiddenX delay200" name="contactName" id="contactName" {...formik.getFieldProps("contactName")} />
           <FormErrorMessage>
             {formik.touched.contactName && formik.errors.contactName}
           </FormErrorMessage>
 
-          <label className="hiddenX delay200" htmlFor="contactEmail">{t("home.contact.form.email")}</label>
-          <input className="hiddenX delay200" name="contactEmail" id="contactEmail" {...formik.getFieldProps("contactEmail")} />
+          <label className="no-js-hiddenX delay200" htmlFor="contactEmail">{t("home.contact.form.email")}</label>
+          <input className="no-js-hiddenX delay200" name="contactEmail" id="contactEmail" {...formik.getFieldProps("contactEmail")} />
           <FormErrorMessage>
             {formik.touched.contactEmail && formik.errors.contactEmail}
           </FormErrorMessage>
 
-          <label className="hiddenX delay200" htmlFor="contactMessage">{t("home.contact.form.message")}</label>
-          <textarea className="hiddenX delay200" name="contactMessage" id="contactMessage" cols={30} rows={4} {...formik.getFieldProps("contactMessage")} />
+          <label className="no-js-hiddenX delay200" htmlFor="contactMessage">{t("home.contact.form.message")}</label>
+          <textarea className="no-js-hiddenX delay200" name="contactMessage" id="contactMessage" cols={30} rows={4} {...formik.getFieldProps("contactMessage")} />
           <FormErrorMessage>
             {formik.touched.contactMessage && formik.errors.contactMessage}
           </FormErrorMessage>
 
-          <Button className="hiddenX delay200" type="submit">
+          <Button className="no-js-hiddenX delay200" type="submit">
             {t("home.contact.form.bntSubmit")}
           </Button>
         </Form>

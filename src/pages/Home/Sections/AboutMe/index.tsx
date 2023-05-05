@@ -36,35 +36,35 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
     <Grid id="about-me">
       <AboutMeContainer>
         <Title className="st1">{t("home.about.title")}</Title>
-        <Subtitle className="hiddenY">{t("home.about.subtitle")}</Subtitle>
+        <Subtitle className="no-js-hiddenY">{t("home.about.subtitle")}</Subtitle>
         <DescriptionContainer>
-          <p className="p1 hiddenX delay100">
+          <p className="p1 no-js-hiddenX delay100">
             {t("home.about.description1").replace("$NUM", String(myTimeOfExperience))}
           </p>
-          <p className="p1 hiddenX delay100">
+          <p className="p1 no-js-hiddenX delay100">
             {t("home.about.description2")}
           </p>
-          <p className="p1 hiddenX delay100">
+          <p className="p1 no-js-hiddenX delay100">
             {t("home.about.description3")}
           </p>
           <Infos>
-          <div className="info-container hiddenX delay300">
+          <div className="info-container no-js-hiddenX delay300">
             <span className="info-title">{t("home.about.iLiveIn")}</span>
             <h5 className="info-content">{t("home.about.saoPaulo")}</h5>
           </div>
-          <div className="info-container hiddenX delay200">
+          <div className="info-container no-js-hiddenX delay200">
             <span className="info-title">{t("home.about.experience")}</span>
             <h5 className="info-content">{t("home.about.timeExperience").replace("$NUM", String(myTimeOfExperience))}</h5>
           </div>
-          <div className="info-container hiddenX delay100">
+          <div className="info-container no-js-hiddenX delay100">
             <span className="info-title">{t("home.about.age")}</span>
             <h5 className="info-content">{t("home.about.myAge").replace("$NUM", String(myAge))}</h5>
           </div>
         </Infos>
         </DescriptionContainer>
-        <TechTitle  className="hiddenY">{t("home.about.technology")}</TechTitle>
+        <TechTitle  className="no-js-hiddenY">{t("home.about.technology")}</TechTitle>
         <TechContent>
-          <TechItem className="hiddenX delay100" title={t("home.about.nextjs")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.nextjs")}>
             <Image
               width={50}
               height={50}
@@ -73,7 +73,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.nextjs")}
               src={theme.theme === "dark" ? nextjsLight.src : nextjsDark.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.reactjs")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.reactjs")}>
             <Image
               width={50}
               height={50}
@@ -82,7 +82,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.reactjs")}
               src={reactjs.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.javascript")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.javascript")}>
             <Image
               width={50}
               height={50}
@@ -91,7 +91,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.javascript")}
               src={javascript.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.typescript")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.typescript")}>
             <Image
               width={50}
               height={50}
@@ -100,7 +100,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.typescript")}
               src={typescript.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.html")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.html")}>
             <Image
               width={50}
               height={50}
@@ -109,7 +109,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.html")}
               src={html.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.css")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.css")}>
             <Image
               width={50}
               height={50}
@@ -118,7 +118,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.css")}
               src={css.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.emotion")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.emotion")}>
             <Image
               width={50}
               height={50}
@@ -127,7 +127,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.emotion")}
               src={emotion.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.figma")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.figma")}>
             <Image
               width={50}
               height={50}
@@ -136,7 +136,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.figma")}
               src={figma.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.prismic")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.prismic")}>
             <Image
               width={50}
               height={50}
@@ -145,7 +145,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.prismic")}
               src={prismic.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.mui")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.mui")}>
             <Image
               width={50}
               height={50}
@@ -154,7 +154,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.mui")}
               src={mui.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.nodejs")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.nodejs")}>
             <Image
               width={50}
               height={50}
@@ -163,7 +163,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
               title={t("home.about.nodejs")}
               src={nodejs.src} />
           </TechItem>
-          <TechItem className="hiddenX delay100" title={t("home.about.python")}>
+          <TechItem className="no-js-hiddenX delay100" title={t("home.about.python")}>
             <Image
               width={50}
               height={50}

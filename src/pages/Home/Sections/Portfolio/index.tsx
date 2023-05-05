@@ -20,18 +20,18 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
     <Grid id="portfolio">
       <PortfolioContainer>
         <Title className="st1">{t("home.portfolio.title")}</Title>
-        <Subtitle className="hiddenY">{t("home.portfolio.subtitle")}</Subtitle>
+        <Subtitle className="no-js-hiddenY">{t("home.portfolio.subtitle")}</Subtitle>
         <DescriptionContainer>
-          <h4 className="hiddenX delay100">
+          <h4 className="no-js-hiddenX delay100">
             {t("home.portfolio.otoh.title")}
           </h4>
-          <p className="p1 hiddenX delay100">
+          <p className="p1 no-js-hiddenX delay100">
             {t("home.portfolio.otoh.description1")}
           </p>
-          <p className="p1 hiddenX delay100">
+          <p className="p1 no-js-hiddenX delay100">
             {t("home.portfolio.otoh.description2")}
           </p>
-          <OtohMockup2 className="hiddenX delay100" id="otoh-mockup">
+          <OtohMockup2 className="no-js-hiddenX delay100" id="otoh-mockup">
             <Image
               loading="lazy"
               quality={50} width={521} height={347} sizes="100%"
@@ -40,8 +40,8 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
               src={otohMockup.src} />
           </OtohMockup2>
           <AwardContainer>
-            <h6 className="hiddenX delay100">{t("home.portfolio.otoh.award.title")}</h6>
-            <AwardItem className="hiddenX delay100">
+            <h6 className="no-js-hiddenX delay100">{t("home.portfolio.otoh.award.title")}</h6>
+            <AwardItem className="no-js-hiddenX delay100">
               🥇
               <p className="p1">
                 {t("home.portfolio.otoh.award.award1")}
@@ -51,24 +51,24 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
                 </Link>
               </p>
             </AwardItem>
-            <AwardItem className="hiddenX delay100">
+            <AwardItem className="no-js-hiddenX delay100">
               🥈
               <p className="p1">
                 {t("home.portfolio.otoh.award.award2")}
                 <br />
-                <Link rel="external" className="hiddenX delay100" href="https://www.cbic.org.br/premioinovacaoesustentabilidade/edicao-anterior-2022/" target="_blank">
+                <Link rel="external" className="no-js-hiddenX delay100" href="https://www.cbic.org.br/premioinovacaoesustentabilidade/edicao-anterior-2022/" target="_blank">
                   {t("home.portfolio.otoh.award.callToAction")}
                 </Link>
               </p>
             </AwardItem>
           </AwardContainer>
-          <Link rel="external" className="hiddenX delay100" href={`https://www.otoh.com.br/${router.locale}`} target="_blank">
+          <Link rel="external" className="no-js-hiddenX delay100" href={`https://www.otoh.com.br/${router.locale}`} target="_blank">
             <Button>
               {t("home.portfolio.otoh.learnMore")}
             </Button>
           </Link>
         </DescriptionContainer>
-        <OtohMockup className="hiddenX delay100">
+        <OtohMockup className="no-js-hiddenX delay100">
           <Image
             loading="lazy"
             quality={50} width={521} height={347} sizes="100%"

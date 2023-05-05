@@ -18,9 +18,19 @@ export const setAnimations = () => {
       };
     })
   });
-  
-  const hiddenXElements = document.querySelectorAll(".hiddenX");
-  const hiddenYElements = document.querySelectorAll(".hiddenY");
-  hiddenXElements.forEach((el) => observerX.observe(el));
-  hiddenYElements.forEach((el) => observerY.observe(el));
+
+  const noJsHiddenXElements = document.querySelectorAll(".no-js-hiddenX");
+  const noJsHiddenYElements = document.querySelectorAll(".no-js-hiddenY");
+
+  noJsHiddenXElements.forEach((el) => {
+    el.classList.remove("no-js-hiddenX");
+    el.classList.add("hiddenX");
+    observerX.observe(el);
+  });
+
+  noJsHiddenYElements.forEach((el) => {
+    el.classList.remove("no-js-hiddenY");
+    el.classList.add("hiddenY");
+    observerY.observe(el);
+  });
 };

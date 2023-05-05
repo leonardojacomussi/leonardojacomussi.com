@@ -12,8 +12,8 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
     <Grid id="services">
       <ServicesContainer>
         <Title className="st1">{t("home.services.title")}</Title>
-        <Subtitle className="hiddenY">{t("home.services.subtitle")}</Subtitle>
-        <FrontEnd className="hiddenX delay100">
+        <Subtitle className="no-js-hiddenY">{t("home.services.subtitle")}</Subtitle>
+        <FrontEnd className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">01/</h3>
             <h4 className="service-title-area">{t("home.services.frontEnd")}</h4>
@@ -22,7 +22,7 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
             </p>
           </div>
         </FrontEnd >
-        <BackEnd className="hiddenX delay100">
+        <BackEnd className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">02/</h3>
             <h4 className="service-title-area">{t("home.services.backEnd")}</h4>
@@ -31,7 +31,7 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
             </p>
           </div>
         </BackEnd>
-        <UIDesign className="hiddenX delay100">
+        <UIDesign className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">03/</h3>
             <h4 className="service-title-area">{t("home.services.UIDesign")}</h4>
@@ -40,7 +40,7 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
             </p>
           </div>
         </UIDesign>
-        <IoTSsolutions className="hiddenX delay100">
+        <IoTSsolutions className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">04/</h3>
             <h4 className="service-title-area">{t("home.services.IoTSolutions")}</h4>
@@ -49,7 +49,7 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
             </p>
           </div>
         </IoTSsolutions>
-        <AcousticEngineering className="hiddenX delay100">
+        <AcousticEngineering className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">05/</h3>
             <h4 className="service-title-area">{t("home.services.acousticalEng")}</h4>
@@ -58,7 +58,7 @@ const Services: FC<ServicesProps> = ({ t }): JSX.Element => {
             </p>
           </div>
         </AcousticEngineering>
-        <Others className="hiddenX delay100">
+        <Others className="no-js-hiddenX delay100">
           <div className="service-item">
             <h3 className="service-number-area">06/</h3>
             <h4 className="service-title-area">{t("home.services.others")}</h4>
