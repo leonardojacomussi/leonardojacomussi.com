@@ -32,6 +32,13 @@ const Home: NextPage<HomeProps> = ({ dictionary, ...props }): JSX.Element => {
     <Fragment>
       <Head>
         <meta name="description" content={t("metadata.description")} />
+        {/* [INIT] Open Graph Protocol */}
+        <meta property="og:url" content="https://www.leonardojacomussi.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Leonardo Jacomussi" />
+        <meta property="og:description" content={t("metadata.description")} />
+        <meta property="og:image" content="https://storage.googleapis.com/leonardo-jacomussi-site-public/docs/preview.png" />
+        {/* [END] Open Graph Protocol */}
       </Head>
       <Container>
         <Header t={t} />

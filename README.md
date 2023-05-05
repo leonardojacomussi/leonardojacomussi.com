@@ -19,7 +19,7 @@ Welcome to my personal website repository. The purpose of the site is to share m
 <br>
 
 <p align="center">
-  <img src="./public/assets/.github/preview.gif" width="100%">
+  <img src="./public/assets/.github/preview.png" width="100%">
 </p>
 
 <br/><br/>
