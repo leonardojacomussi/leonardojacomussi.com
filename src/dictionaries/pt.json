@@ -72,7 +72,7 @@
       "nodejs": "Node JS",
       "python": "Python",
       "iLiveIn": "Moro em",
-      "saoPaulo": "São Paulo",
+      "local": "Santa Maria, RS",
       "experience": "Experiência",
       "timeExperience": "$NUM anos",
       "age": "Idade",
@@ -113,8 +113,8 @@
         },
         "descomplica": {
           "title": "Descomplica Faculdade Digital",
-          "time": "2023 - 2030",
-          "local": "São Paulo, São Paulo, Brasil",
+          "time": "2023 - 2026",
+          "local": "Santa Maria, Rio Grande do Sul, Brasil",
           "course": "Graduação, Ciência da Computação",
           "period": "EaD"
         }

@@ -46,7 +46,7 @@ const Portfolio: FC<PortfolioProps> = ({ t }): JSX.Element => {
               <p className="p1">
                 {t("home.portfolio.otoh.award.award1")}
                 <br />
-                <Link rel="external" href="https://evento.connectedsmartcities.com.br/o-que-e-o-premio-csc/#:~:text=O%20Pr%C3%AAmio%20aceita%20a%20participa%C3%A7%C3%A3o,maneira%20a%20torn%C3%A1%2Dlas%20inteligentes." target="_blank">
+                <Link rel="external" href="https://premio.connectedsmartcities.com.br/o-que-e-o-premio-csc/#conteudo|7" target="_blank">
                   {t("home.portfolio.otoh.award.callToAction")}
                 </Link>
               </p>

@@ -99,8 +99,8 @@ const Contact: FC<ContactProps> = ({ t, setOpenLoadingContent }): JSX.Element =>
                   src={theme.theme === "dark" ? linkedinLight.src : linkedinDark.src} />
               </div>
               <p className="p2">LinkedIn</p>
-              <Link rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
-                linkedin.com/in/leonardo-jacomussi/
+              <Link rel="external" href="https://www.linkedin.com/in/leonardojacomussi/" target="_blank">
+                linkedin.com/in/leonardojacomussi/
               </Link>
             </SocialMediaItem>
           </div>

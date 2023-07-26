@@ -72,7 +72,7 @@ const Main: FC<MainProps> = ({ t, ...props }): JSX.Element => {
               <span>GitHub</span>
             </NetworkItem>
           </Link>
-          <Link rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/" target="_blank">
+          <Link rel="external" href="https://www.linkedin.com/in/leonardojacomussi/" target="_blank">
             <NetworkItem title="LinkedIn"
               onMouseEnter={() => setHover(prveHover => ({ ...prveHover, linkedin: true }))}
               onMouseLeave={() => setHover(prveHover => ({ ...prveHover, linkedin: false }))}

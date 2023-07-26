@@ -50,7 +50,7 @@ const AboutMe: FC<AboutMeProps> = ({ t }): JSX.Element => {
           <Infos>
           <div className="info-container no-js-hiddenX delay300">
             <span className="info-title">{t("home.about.iLiveIn")}</span>
-            <h5 className="info-content">{t("home.about.saoPaulo")}</h5>
+            <h5 className="info-content">{t("home.about.local")}</h5>
           </div>
           <div className="info-container no-js-hiddenX delay200">
             <span className="info-title">{t("home.about.experience")}</span>

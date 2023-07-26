@@ -72,7 +72,7 @@
       "nodejs": "Node JS",
       "python": "Python",
       "iLiveIn": "I live in",
-      "saoPaulo": "São Paulo",
+      "local": "Santa Maria, RS",
       "experience": "Experience",
       "timeExperience": "$NUM years",
       "age": "Age",
@@ -113,8 +113,8 @@
         },
         "descomplica": {
           "title": "Descomplica Digital Faculty",
-          "time": "2023 - 2030",
-          "local": "São Paulo, São Paulo, Brazil",
+          "time": "2023 - 2026",
+          "local": "Santa Maria, Rio Grande do Sul, Brazil",
           "course": "B.Sc in Computer Science",
           "period": "Distance learning"
         }

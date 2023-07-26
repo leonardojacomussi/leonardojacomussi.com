@@ -43,7 +43,7 @@ const Footer: FC<FooterProps> = ({ t }) => {
             />
           </Link>
           <Link
-            rel="external" href="https://www.linkedin.com/in/leonardo-jacomussi/"
+            rel="external" href="https://www.linkedin.com/in/leonardojacomussi/"
             target="_blank"
             onMouseEnter={() => setHover(prveHover => ({ ...prveHover, linkedin: true }))}
             onMouseLeave={() => setHover(prveHover => ({ ...prveHover, linkedin: false }))}
